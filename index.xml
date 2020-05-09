@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Website of Jane Doe</title>
-    <link>https://example.com/</link>
-    <description>Recent content on Website of Jane Doe</description>
+    <title>Clown博客</title>
+    <link>https://lwbing.top/</link>
+    <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-Hans</language>
-    <lastBuildDate>Sat, 09 May 2020 10:40:05 +0800</lastBuildDate>
+    <language>zh</language>
+    <lastBuildDate>Sat, 09 May 2020 14:19:59 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>如何搭建个人博客</title>
+      <link>https://lwbing.top/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 09 May 2020 14:19:59 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>使用Hugo+GitHub搭建个人博客 步骤1:安装 Hugo 可以去 Hugo releases 页面下载合适的 Hugo 安装,安装完成后测试Hugo是否安装成功,在 Cmder 中执行下面代码:
+ hugo version  步骤2:建立新的网站  hugo new site quickstart  进入一个合适的目录,在 Cmder 中执行上面的代码,将 quickstart 替换为 username.github.io-creator,其中 username 为你在 GitHub 上全小写的用户名.
+步骤3:创建主题 进入新建好的网站,输入下面的代码,可进入 Hugo Themes 页面选择喜欢的主题,并替换第二条代码.
+git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke  然后将主题添加至配置 config.toml 中:
+ echo &#39;theme = &amp;quot;你所下载的主题名称&amp;quot;&#39; &amp;gt;&amp;gt; config.toml  没有下载 git 的用户,可自行安装 git ,或者进入主题页面直接下载主题压缩包,解压后改名为对应的主题名称,并移至 &amp;ldquo; themes\ &amp;ldquo; 目录下
+步骤4:编写第一篇博客 可输入下面的代码,创建一个新的文章
+ hugo new posts/第一篇博客.</description>
+    </item>
+    
+    <item>
       <title>第一篇博客</title>
-      <link>https://example.com/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 09 May 2020 10:40:05 +0800</pubDate>
       
-      <guid>https://example.com/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
       <description>第一篇博客 我的第一篇博客</description>
     </item>
     

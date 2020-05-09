@@ -3,26 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://lwbing.top/</loc>
+    <lastmod>2020-05-09T14:19:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lwbing.top/posts/</loc>
+    <lastmod>2020-05-09T14:19:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lwbing.top/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-05-09T14:19:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-05-09T10:40:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2020-05-09T10:40:05+08:00</lastmod>
+    <loc>https://lwbing.top/categories/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2020-05-09T10:40:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://lwbing.top/tags/</loc>
   </url>
   
 </urlset>
