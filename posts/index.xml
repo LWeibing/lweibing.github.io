@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 10 May 2020 15:15:10 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 23:00:25 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>https://lwbing.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Sun, 10 May 2020 23:00:25 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>html 中有大约110个标签,那是不是这么多的标签我们都需要将其强记下来呢?不,我们只需要记住一些常用的 html 标签,那些不常用的标签,当我们碰到了要使用的情况,再去 MDN 查询即可.话不多说,一起来看看吧
+HTML常用标签 a 标签 table 标签 img 标签 from 标签 input 标签 其他输入标签 a 标签 a 标签的作用  跳转到外部页面 跳转到内部锚点 跳转到邮箱或电话等  a 标签的属性  herf target download rel = noopener  1. herf 的取值 网址
+在 a 标签的 href 里面,我们可以入以 http//: , https//: 和 //为头的网址,一般我们用 // 为主,因为它的兼容性最好.
+ &amp;lt;a href=&amp;quot;//baidu.com&amp;quot;&amp;gt;百度&amp;lt;/a&amp;gt;  路径
+可以在 href 属性中填入路径.
+&amp;lt;a href=&amp;quot;/a/b/c.html&amp;quot;&amp;gt;c.html&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;a/b/c.html&amp;quot;&amp;gt;c.html&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;index.html&amp;quot;&amp;gt;index.html&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;/index.html&amp;quot;&amp;gt;index.html&amp;lt;/a&amp;gt;  注意,如果你写链接的最前面有 / 的时候,在预览时需要在终端用 http-server -c-1 或者 percel xxx.</description>
+    </item>
     
     <item>
       <title>HTML入门笔记1</title>
