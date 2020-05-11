@@ -6,10 +6,24 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 09 May 2020 14:19:59 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 15:15:10 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML入门笔记1</title>
+      <link>https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Sun, 10 May 2020 15:15:10 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <description>万维网是什么  WWW = URL + HTTP + HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
+万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&amp;rdquo;网上冲浪&amp;rdquo;第一人.
+HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
+HTML起手式 Emmet感叹号
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  章节标签 表示文章的层级
+   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性</description>
+    </item>
     
     <item>
       <title>如何搭建个人博客</title>

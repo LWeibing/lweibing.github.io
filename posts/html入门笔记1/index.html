@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HTML入门笔记1 | Clown博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="HTML入门笔记1" />
+<meta property="og:description" content="万维网是什么  WWW = URL &#43; HTTP &#43; HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
+万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&rdquo;网上冲浪&rdquo;第一人.
+HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
+HTML起手式 Emmet感叹号
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;  章节标签 表示文章的层级
+   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" />
+<meta property="article:published_time" content="2020-05-10T15:15:10+08:00" />
+<meta property="article:modified_time" content="2020-05-10T15:15:10+08:00" />
+<meta itemprop="name" content="HTML入门笔记1">
+<meta itemprop="description" content="万维网是什么  WWW = URL &#43; HTTP &#43; HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
+万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&rdquo;网上冲浪&rdquo;第一人.
+HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
+HTML起手式 Emmet感叹号
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;  章节标签 表示文章的层级
+   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性">
+
+
+<meta itemprop="datePublished" content="2020-05-10T15:15:10&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-10T15:15:10&#43;08:00" />
+<meta itemprop="wordCount" content="123">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML入门笔记1"/>
+<meta name="twitter:description" content="万维网是什么  WWW = URL &#43; HTTP &#43; HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
+万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&rdquo;网上冲浪&rdquo;第一人.
+HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
+HTML起手式 Emmet感叹号
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;  章节标签 表示文章的层级
+   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+<header>
+  <div class="bg-black">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lwbing.top/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Clown博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+  </div>
+</header>
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/&amp;text=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/&amp;title=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">HTML入门笔记1</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-10T15:15:10&#43;08:00">May 10, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="万维网是什么">万维网是什么</h2>
+
+<hr />
+
+<pre><code>    WWW = URL + HTTP + HTML
+</code></pre>
+
+<p>WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.</p>
+
+<h2 id="万维网的诞生">万维网的诞生</h2>
+
+<hr />
+
+<p>在1990年,<code>Tim Berners-Lee</code>为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是<code>Tim Berners-Lee</code>成为了&rdquo;网上冲浪&rdquo;第一人.</p>
+
+<h2 id="html历史">HTML历史</h2>
+
+<hr />
+
+<p>HTML诞生于<code>Tim Berners-Lee</code>的一篇叫做 <a href="http://help.dottoro.com/lhfnwhnn.php">HTML Tags</a> 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.</p>
+
+<h2 id="html起手式">HTML起手式</h2>
+
+<hr />
+
+<p>Emmet感叹号</p>
+
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="章节标签">章节标签</h2>
+
+<hr />
+
+<p>表示文章的层级</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">标签</th>
+<th align="center">作用</th>
+<th align="center">标签</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">h1~h6</td>
+<td align="center">文章各级标题</td>
+<td align="center">footer</td>
+<td align="center">脚部</td>
+</tr>
+
+<tr>
+<td align="center">section</td>
+<td align="center">章节</td>
+<td align="center">main</td>
+<td align="center">主要内容</td>
+</tr>
+
+<tr>
+<td align="center">article</td>
+<td align="center">文章</td>
+<td align="center"></td>
+<td align="center">旁支内容</td>
+</tr>
+
+<tr>
+<td align="center">p</td>
+<td align="center">段落</td>
+<td align="center">div</td>
+<td align="center">划分区域</td>
+</tr>
+
+<tr>
+<td align="center">header</td>
+<td align="center">头部</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="全局属性">全局属性</h2>
+
+<hr />
+
+<p>所有标签都有的属性</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">class</td>
+<td align="center">给标签添加类属性</td>
+</tr>
+
+<tr>
+<td align="center">id</td>
+<td align="center">给标签添加唯一的id属性</td>
+</tr>
+
+<tr>
+<td align="center">contenteditable</td>
+<td align="center">用户能够对内容进行编辑</td>
+</tr>
+
+<tr>
+<td align="center">hidden</td>
+<td align="center">隐藏</td>
+</tr>
+
+<tr>
+<td align="center">style</td>
+<td align="center">更改样式</td>
+</tr>
+
+<tr>
+<td align="center">tabindex</td>
+<td align="center">可以用 Tab 进行交互</td>
+</tr>
+
+<tr>
+<td align="center">title</td>
+<td align="center">鼠标移入提示文字</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="内容标签">内容标签</h2>
+
+<hr />
+
+<p>识别内容的结构</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">标签</th>
+<th align="center">作用</th>
+<th align="center">标签</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">ol + li</td>
+<td align="center">有序列表</td>
+<td align="center">a</td>
+<td align="center">链接</td>
+</tr>
+
+<tr>
+<td align="center">ul + li</td>
+<td align="center">无序列表</td>
+<td align="center">em</td>
+<td align="center">强调(语气上的强调)</td>
+</tr>
+
+<tr>
+<td align="center">dl + dt + dd</td>
+<td align="center">对词汇等进行描述</td>
+<td align="center">strong</td>
+<td align="center">重要(内容上的强调)</td>
+</tr>
+
+<tr>
+<td align="center">pre</td>
+<td align="center">保留空格,回车以及 Tab</td>
+<td align="center">code</td>
+<td align="center">书写代码</td>
+</tr>
+
+<tr>
+<td align="center">hr</td>
+<td align="center">水平线</td>
+<td align="center">q</td>
+<td align="center">引用</td>
+</tr>
+
+<tr>
+<td align="center">br</td>
+<td align="center">换行</td>
+<td align="center">blockquote</td>
+<td align="center">换行引用</td>
+</tr>
+</tbody>
+</table>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lwbing.top/" >
+    &copy;  Clown博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
