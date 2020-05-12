@@ -47,7 +47,7 @@ HTML常用标签 a 标签 table 标签 img 标签 from 标签 input 标签 其�
 
 <meta itemprop="datePublished" content="2020-05-10T23:00:25&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-10T23:00:25&#43;08:00" />
-<meta itemprop="wordCount" content="427">
+<meta itemprop="wordCount" content="439">
 
 
 
@@ -216,7 +216,7 @@ Hit CTRL-C to stop the server
 </code></pre>
 
 <p>伪协议
-* javascript:代码. 当单击是执行代码,如果为空,这什么事情也不发生
+* javascript:代码. 当单击是执行代码,如果为空,则什么事情也不发生
 * mailto:邮箱. 可以发送邮件
 * tel:电话. 可以拨打电话</p>
 
@@ -236,11 +236,14 @@ Hit CTRL-C to stop the server
 <p>其他
 * 当 <code>href</code> 为空值时,点击将会刷新页面;</p>
 
-<pre><code>&lt;a href=&quot;&quot;&gt;会刷新页面的a&lt;/a&gt;
+<pre><code>    &lt;a href=&quot;&quot;&gt;会刷新页面的a&lt;/a&gt;
 </code></pre>
 
 <ul>
-<li>当 <code>href</code> 为 <code>#</code> 时,点击将会将页面拉到最顶上;</li>
+<li><p>当 <code>href</code> 为 <code>#</code> 时,点击将会将页面拉到最顶上;</p>
+
+<pre><code>&lt;a href=&quot;#&quot;&gt;会刷新页面的a&lt;/a&gt;
+</code></pre></li>
 </ul>
 
 <h4 id="2-target的取值">2.target的取值</h4>
@@ -260,18 +263,20 @@ Hit CTRL-C to stop the server
 
 <li><p>_top:在上一层的页面中打开</p>
 
-<pre><code>&lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
+<pre><code>    //这是 index.html 文件
+    &lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
 
-在 iframe-target.html 文件中
-&lt;a href=&quot;//baidu.com&quot; target=&quot;_top&quot;&gt;在顶部打开百度&lt;/a&gt;
+    //这是 iframe-target.html 文件
+    &lt;a href=&quot;//baidu.com&quot; target=&quot;_top&quot;&gt;在 index.html 页面打开百度页面&lt;/a&gt;
 </code></pre></li>
 
 <li><p>_self:自己打开页面</p>
 
-<pre><code>&lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
+<pre><code>    //这是 index.html 文件
+    &lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
 
-//在 iframe-target.html 文件中
-&lt;a href=&quot;//baidu.com&quot; target=&quot;_self&quot;&gt;自己打开百度&lt;/a&gt;
+    //这是 iframe-target.html 文件
+    &lt;a href=&quot;//baidu.com&quot; target=&quot;_self&quot;&gt;在 iframe-target.html 页面打开百度&lt;/a&gt;
 </code></pre></li>
 </ul>
 
@@ -280,19 +285,19 @@ Hit CTRL-C to stop the server
 <ul>
 <li><p>window的name</p>
 
-<pre><code>//没有xxx页面,则新建xxx页面打开,否则在xxx页面打开
-&lt;a href=&quot;//baidu.com&quot; target=&quot;xxx&quot;&gt;用xxx打开百度&lt;/a&gt;
-&lt;a href=&quot;//google.com&quot; target=&quot;xxx&quot;&gt;用xxx打开谷歌&lt;/a&gt;
+<pre><code>    //没有xxx页面,则新建xxx页面打开,否则在xxx页面打开
+    &lt;a href=&quot;//baidu.com&quot; target=&quot;xxx&quot;&gt;用xxx打开百度&lt;/a&gt;
+    &lt;a href=&quot;//google.com&quot; target=&quot;xxx&quot;&gt;用xxx打开谷歌&lt;/a&gt;
 </code></pre></li>
 
 <li><p>iframe的name</p>
 
-<pre><code>&lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
-&lt;a href=&quot;//baidu.com&quot; target=&quot;yyy&quot;&gt;用xxx打开百度&lt;/a&gt;
-</code></pre></li>
-</ul>
+<pre><code>    &lt;iframe src=&quot;iframe-target.html&quot; frameborder=&quot;0&quot; name=&quot;yyy&quot;&gt;&lt;/iframe&gt;
+    &lt;a href=&quot;//baidu.com&quot; target=&quot;yyy&quot;&gt;用xxx打开百度&lt;/a&gt;
+</code></pre>
 
-<h4 id="3-download">3. download</h4>
+<h4 id="3-download">3. download</h4></li>
+</ul>
 
 <p>作用:下载超链接目标</p>
 
