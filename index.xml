@@ -6,10 +6,28 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 10 May 2020 23:00:25 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 22:15:34 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS盒模型</title>
+      <link>https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Tue, 12 May 2020 22:15:34 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/</guid>
+      <description>CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+怪异盒子模型的的大小 = width(content + padding + border) + margin
+如何使用盒子模型 我们可以通过 box-sizing 来设置使用什么盒子模型.
+ content-box: 默认值,即是标准盒子模型.
+ border-box: 怪异盒子模型,程序员更多的使用这个,可以更好的设置一个元素的宽高.
+  使用案例 HTML  &amp;lt;div class=&amp;quot;content-box&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;border-box&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  CSS div { width: 200px; height: 100px; border: 5px solid red; padding: 30px; margin: 30px; } .</description>
+    </item>
     
     <item>
       <title>HTML常用标签</title>
