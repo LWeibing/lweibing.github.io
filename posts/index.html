@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-05-12T22:15:34+08:00" />
+<meta property="og:updated_time" content="2020-05-15T17:48:49+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,61 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
+        浅析 URL
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      URL的组成 URL也叫统一资源定位符,由 协议 + 域名 + 端口号 + 路径 + 查询参数 + 锚点 组成  协议
+HTTP(基于TPC和IP两个协议)协议,还有FTP协议等等。
+ 域名
+ 域名是对IP的别称 一个域名可以对应不同的IP,这叫均衡负载,防止一台机器扛不住 一个IP可以对应不同的域名,这叫共享主机,资金不够的开发者会这么做.  端口号
+一台机器可以提供很多服务,每个服务的号码就是端口
+ HTTP 服务最好使用 80端口 HTTPS 服务最好使用 443端口 FTP 服务最好使用 21端口 一共有65535个端口(基本够用) 0-1023号端口是留给系统使用的,你只有拥有了管理权限,才能使用这1024个端口 其他端口都可以给普通用户使用 端口若被占用,则只能换一个端口  路径
+是服务器上的一个目录或地址,以这个地址访问不同的页面,不是URL必须的部分
+ 查询参数
+在问号后面拼接的一串字符,可以查询相关信息,可以在同一个页面,查看不同的内容
+ 锚点
+定位页面的位置
+ 锚点看起来有中文,实际上不支持中文 锚点无法在Network上看到的,因为锚点不会传给服务器   DNS Domain Name System 域名系统 作用:可以将域名解析为IP,浏览器通过该IP的80/443端口发送请求,访问页面.
+nslookup 可以查询IP地址和DNS记录,查看域名解析是否正常.
+IP 当你买了一个路由器,并连接了租用的宽带,你就有了一个属于自己的IP  路由器没有固定的外网IP,如果你重启了路由器,你有可能会被重新分配一个外网IP 路由器会在你家里创建一个内网,内网中的设备使用内网IP  路由器的功能  内网设备可以相互访问,不能直接访问外网,必须经过路由器中转 外网设备可以相互访问,无法直接访问你的内网,外网设备想把内容发送到内网,必须经过路由器 因此路由器也叫网关  特殊的IP  127.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+        CSS知识总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      文档流 盒模型 CSS 布局 CSS 定位 CSS 动画 层叠上下文 浏览器渲染原理 文档流 流动方向  inline
+inline元素从左至右,位置不够时,可能会将元素分为两块宽度由内部的inline元素的和决定不能指定宽度高度由line-height间接决定,与height无关
+ block
+宽度默认自动计算,可以用width指定高度由内部文档流元素决定,可以设置height决定
+ inline-block
+从左至右,位置不够时,不会将元素分为两块结合两者的特点,可以用width指定宽度,也可以用height设置高度
+  注意:
+ 现在不再区分内联元素和块级元素,而是有display决定. 千万不要在 inline元素中加block元素.  overflow 当内容的宽度或者高度大于容器的宽度或高度时,会产生溢出现象.
+可用overflow属性设置:
+ visible:默认值,内容不会被改变,显示在容器外部 hidden:内容会被裁剪,适应容器的大小,没有滚动条 scroll:内容会被裁剪,适应容器大小,显示滚动条(无论内容是否超出容器,都会显示滚动条) auto:内容会被裁剪,适应容器大小,显示滚动条(判断内容是否超出容器,超出容器就显示滚动条,否则不显示)  脱离文档流 当元素使用float和position:absolute | fixed属性,都会使元素脱离文档流,脱离文档流后,父元素将不再计算其高度
+盒模型 CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
