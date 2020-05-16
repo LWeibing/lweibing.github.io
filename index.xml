@@ -6,10 +6,21 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 15 May 2020 17:48:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 22:42:42 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript的概述</title>
+      <link>https://lwbing.top/posts/javascript%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Sat, 16 May 2020 22:42:42 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/javascript%E6%A6%82%E8%BF%B0/</guid>
+      <description> JavaScript的历史 JavaScript的诞生 JavaScript之父,布莱登在1995年进入网景公司,公司要求为其浏览器添加一个脚本功能,而且还必须要蹭Java的热度,于JavaScript功能被开发了出来.由于布莱登只花了十天的时间设计了JS的最初版本,所以当时的JavaScript只是一个不起眼的小功能,而且有很多bug.
+1996年8月,IE3发布,并支持JScript(微软实现的JS),于是网景在三个月后向ECMA提交语言标准,但是由于版权问题,不叫JavaScript,而改为ECMAScript.
+JavaScript的发展  1997年6月,第一版的ECMAScript发布 1999年12月,第三版ECMAScript发布,这个版本是目前世界上使用最广泛的 JS 版本. 2004年4月,谷歌发布Gmail在线网页,让当时认为网页只能看图片和新闻的人们眼前一亮. 2005年,谷歌运用的这种技术被称之为AJAX,前端技术从此正式出现. 2006年,JQuery发布,在未来的十年里,JQuery一直大放异彩,直到IE没落,才没有那么火,但至今依旧有很多网站在使用着他 2009年12月,ECMAScript第五版发布,增加了一些功能.Ryan基于Chrome的JS引擎V8,创建了Node.js 2010年,Isaac基于Node.js写出了npm,前端工程师就可以开始在浏览器之外执行JS,Node.js迅速风靡. 2011年,智能手机的发布和Nokia的没落,前端工程师迎来解放前夕. 2015年6月,ECMAScript第六版发布,新浏览器都支持这个版本,之后每年发布一个版本,并以该年份命名. 2016年,Chrome占据全球份额的62%,超过了IE,同年淘宝天猫宣布不再支持IE6,IE7和IE8,让中国摆脱了IE的支配,前端开始急速发展. 在这期间,JavaScript有很多技术推出,像gulp,grunt,yeoman,reqirejs,webpack,Angular,React,Vue等,虽然至今已有很多没落,但也有很多一直在进步.  JavaScript的缺陷  不适合大型开发 非常小的标准库 null和undefined 全局变量难以控制 自动插入行尾分号 加号运算符 NaN 数组和对象的区分 == 和 === 基本类型的包装对象  </description>
+    </item>
     
     <item>
       <title>浅析 URL</title>
@@ -34,7 +45,7 @@ IP 当你买了一个路由器,并连接了租用的宽带,你就有了一个属
     </item>
     
     <item>
-      <title>CSS知识总结</title>
+      <title>CSS 知识总结</title>
       <link>https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
       <pubDate>Thu, 14 May 2020 22:15:34 +0800</pubDate>
       
