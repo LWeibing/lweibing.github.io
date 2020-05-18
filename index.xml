@@ -6,10 +6,23 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 16 May 2020 22:42:42 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2020 23:24:47 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS 语法</title>
+      <link>https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 18 May 2020 23:24:47 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/</guid>
+      <description>表达式与语句 表达式 表达式是由运算元和运算符(可选)构成，并产生运算结果的语法结构
+ 1 + 2的表达式的值是为3 add(1,2)表达式值为函数返回值 console.log表达式返回的值为函数本身  语句 由一个或多个关键字和表达式构成
+ var a = 1 是一个语句  二者的区别  表达式一般都有值,语句可能有也可能没有 语句一般会改变环境(声明,赋值) 上面两句话并不是绝对的  标识符 是用来识别具体对象的一个名称
+规则  可以是Unicode字母,$,数字,_和中文 数字不能作为标识符的首个字符  变量名是标识符  var _ = 1 var $ = 2 var ___ = 6  注释 不好的注释  把代码翻译为中文 过时的注释 发泄不满的注释  好的注释  踩坑注释 遇到的问题,解决的方法  if语句 语法 if(表达式){ 语句1 }else{ 语句2 }  在{}中只有一句语句的时候可以省略,但不建议省略
+变态情况  表达式里可以非常变态,如 a = 1 语句1和语句2里可以非常变态,如嵌套 if else 缩进可以非常变态,如下</description>
+    </item>
     
     <item>
       <title>JavaScript的概述</title>
