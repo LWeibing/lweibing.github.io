@@ -27,10 +27,9 @@
     
     <meta property="og:title" content="JS 对象基本用法" />
 <meta property="og:description" content="对象 object js中唯一一种复杂类型
- 无序的数据集合 键值对的集合  声明方式 1. let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} 2. let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
+ 无序的数据集合 键值对的集合  声明方式 let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
  键名是字符串,不是标识符,可以包含任意字符 引号可以省略,省略之后就只能写标识符 就算省略了引号,键名还是字符串  属性名 所有的属性名会自动变成字符串
-可以用Object.keys(obj)得到 obj 的所有的 key
-变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
+Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
 细节:
  不加 [] 的属性名会自动变为字符串 加了 [] 的属性名会被当做变量求值  隐藏属性 JS中每一个对象都有一个隐藏属性proto,这个属性存储着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,也就是说,隐藏属性proto中存储着原型的地址
 原型  每个对象都有原型
@@ -41,10 +40,9 @@
 <meta property="article:modified_time" content="2020-05-19T22:51:51+08:00" />
 <meta itemprop="name" content="JS 对象基本用法">
 <meta itemprop="description" content="对象 object js中唯一一种复杂类型
- 无序的数据集合 键值对的集合  声明方式 1. let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} 2. let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
+ 无序的数据集合 键值对的集合  声明方式 let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
  键名是字符串,不是标识符,可以包含任意字符 引号可以省略,省略之后就只能写标识符 就算省略了引号,键名还是字符串  属性名 所有的属性名会自动变成字符串
-可以用Object.keys(obj)得到 obj 的所有的 key
-变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
+Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
 细节:
  不加 [] 的属性名会自动变为字符串 加了 [] 的属性名会被当做变量求值  隐藏属性 JS中每一个对象都有一个隐藏属性proto,这个属性存储着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,也就是说,隐藏属性proto中存储着原型的地址
 原型  每个对象都有原型
@@ -53,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-05-19T22:51:51&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-19T22:51:51&#43;08:00" />
-<meta itemprop="wordCount" content="171">
+<meta itemprop="wordCount" content="167">
 
 
 
@@ -61,10 +59,9 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS 对象基本用法"/>
 <meta name="twitter:description" content="对象 object js中唯一一种复杂类型
- 无序的数据集合 键值对的集合  声明方式 1. let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} 2. let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
+ 无序的数据集合 键值对的集合  声明方式 let obj = {&#39;name&#39;:&#39;Tom&#39;,&#39;age&#39;:18} let obj = new Object({&#39;name&#39;:&#39;Tom&#39;})  注意:
  键名是字符串,不是标识符,可以包含任意字符 引号可以省略,省略之后就只能写标识符 就算省略了引号,键名还是字符串  属性名 所有的属性名会自动变成字符串
-可以用Object.keys(obj)得到 obj 的所有的 key
-变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
+Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 = &#39;name&#39; let obj = { [p1]: &#39;Tom&#39; }  这样写的话, obj 的属性名为 &#39;name&#39;
 细节:
  不加 [] 的属性名会自动变为字符串 加了 [] 的属性名会被当做变量求值  隐藏属性 JS中每一个对象都有一个隐藏属性proto,这个属性存储着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,也就是说,隐藏属性proto中存储着原型的地址
 原型  每个对象都有原型
@@ -170,8 +167,9 @@
 
 <h3 id="声明方式">声明方式</h3>
 
-<pre><code>1. let obj = {'name':'Tom','age':18}
-2. let obj = new Object({'name':'Tom'})
+<pre><code class="language-javascript">let obj = {'name':'Tom','age':18}
+
+let obj = new Object({'name':'Tom'})
 </code></pre>
 
 <p>注意:</p>
@@ -186,11 +184,13 @@
 
 <p>所有的属性名会自动变成字符串</p>
 
-<p>可以用<code>Object.keys(obj)</code>得到 obj 的所有的 <code>key</code></p>
+<pre><code class="language-javascript">Object.keys(obj) //可以得到 obj 的所有的 key
+</code></pre>
 
 <h4 id="变量做属性名">变量做属性名</h4>
 
-<pre><code>let p1 = 'name'
+<pre><code class="language-javascript">let p1 = 'name'
+
 let obj = {
     [p1]: 'Tom'
 }
@@ -223,62 +223,71 @@ let obj = {
 
 <h3 id="删除属性">删除属性</h3>
 
-<pre><code>1. delete obj.xxx
-2. delete obj['xxx']
+<pre><code class="language-javascript">delete obj.xxx
+
+delete obj['xxx']
 </code></pre>
 
 <p>上面的代码都可以删除对象 obj 中的 xxx 属性</p>
 
 <h3 id="查看所有属性">查看所有属性</h3>
 
-<ul>
-<li>Object.keys(obj) 查看自身所有属性</li>
-<li>console.dir(obj) 查看自身+共有属性</li>
-<li>obj.hasOwnProperty(&lsquo;toString&rsquo;) 判读一个属性是自身还是共有的</li>
-</ul>
+<pre><code class="language-javascript">Object.keys(obj) //查看自身所有属性
+
+console.dir(obj) //查看自身+共有属性
+
+obj.hasOwnProperty('toString') //判读一个属性是自身还是共有的
+</code></pre>
 
 <h3 id="查看单个属性">查看单个属性</h3>
 
-<ul>
-<li>obj[&lsquo;key&rsquo;] 中括号语法</li>
-<li>obj.key 点语法</li>
-</ul>
+<pre><code class="language-javascript">  obj['key'] //中括号语法
+
+  obj.key //点语法
+</code></pre>
 
 <p>注意:点语法会误导新人,认为 <code>key</code> 不是字符串,实际上 <code>key</code> 是一个字符串</p>
 
-<ul>
-<li>obj.name === obj[&lsquo;name&rsquo;]</li>
-<li>obj.name !== obj[name]</li>
-</ul>
+<pre><code class="language-javascript">  obj.name === obj['name']
+
+  obj.name !== obj[name]
+</code></pre>
 
 <h3 id="修改或增加属性">修改或增加属性</h3>
 
 <h4 id="修改或增加自身属性">修改或增加自身属性</h4>
 
-<ul>
-<li>let obj = { name:&lsquo;Tom&rsquo; }</li>
-<li>obj.name = &lsquo;Tom&rsquo;</li>
-<li>obj[&lsquo;name&rsquo;] = &lsquo;Tom&rsquo;</li>
-<li>obj[&lsquo;na&rsquo; + &lsquo;me&rsquo;] = &lsquo;Tom&rsquo;</li>
-<li>let key = &lsquo;name&rsquo;; obj[key] = &lsquo;Tom&rsquo;</li>
-</ul>
+<pre><code class="language-javascript">  let obj = { name:'Tom' }
 
-<p>可以用 <code>Object.assign(obj,{age:18,gender: 'man'})</code> 进行批量赋值</p>
+  obj.name = 'Tom'
+
+  obj['name'] = 'Tom'
+
+  obj['na' + 'me'] = 'Tom'
+
+  let key = 'name'; obj[key] = 'Tom'
+</code></pre>
+
+<p>可以用下面的代码进行批量赋值</p>
+
+<pre><code class="language-javascript">Object.assign(obj,{age:18,gender: 'man'})
+</code></pre>
 
 <h4 id="修改或增加共有属性">修改或增加共有属性</h4>
 
-<ul>
-<li>obj.__proto__[&lsquo;toString&rsquo;] = &lsquo;xxx&rsquo;</li>
-<li>Object.prototype[&lsquo;toString&rsquo;] = &lsquo;xxx&rsquo;</li>
-<li>一般来说不要修改原型上的属性,会引起很多问题</li>
-</ul>
+<pre><code class="language-javascript">obj.__proto__['toString'] = 'xxx'
+
+Object.prototype['toString'] = 'xxx'
+
+//一般来说不要修改原型上的属性,会引起很多问题
+</code></pre>
 
 <h4 id="修改原型">修改原型</h4>
 
-<ul>
-<li>obj.__proto__ = common</li>
-<li>let obj = Object.create(common)</li>
-</ul>
+<pre><code class="language-javascript">obj.__proto__ = common
+
+let obj = Object.create(common)
+</code></pre>
 
 <p>注意:所有用 <code>__proto__</code> 的代码都强烈不建议使用</p>
 
@@ -286,10 +295,10 @@ let obj = {
 
 <p>属性值为 <code>undefined</code> 不等于 不含属性名,即属性值为<code>undefined</code> 不能判断对象是否拥有该属性</p>
 
-<ul>
-<li><code>'xxx' in obj === false</code> 不含属性名</li>
-<li><code>'xxx' in obj &amp;&amp; obj.xxx === undefined</code> 含有属性名,但属性值为<code>undefined</code></li>
-</ul>
+<pre><code class="language-javascript">'xxx' in obj === false //不含属性名
+
+'xxx' in obj &amp;&amp; obj.xxx === undefined //含有属性名,但属性值为`undefined`
+</code></pre>
 <ul class="pa0">
   
 </ul>
