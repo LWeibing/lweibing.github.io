@@ -45,7 +45,7 @@
 
 <meta itemprop="datePublished" content="2020-05-20T20:43:32&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-20T20:43:32&#43;08:00" />
-<meta itemprop="wordCount" content="160">
+<meta itemprop="wordCount" content="188">
 
 
 
@@ -228,6 +228,21 @@ function times(i) {
 </code></pre>
 
 <p>将 <code>setTimeout</code> 从<code>for</code>循环中拿出来放入一个函数中,每次<code>for</code>循环调用这个函数并将 <code>i</code> 传入函数,就算 <code>setTimeout</code> 会比较慢,但是和 <code>for</code> 循环无关,调用了6个函数也接到了 <code>i</code> 的值,当 <code>setTimeout</code> 执行的时候,把 <code>i</code> 值输出就行了</p>
+
+<h4 id="方法三">方法三:</h4>
+
+<pre><code class="language-javascript">let i
+for (i = 0; i &lt; 6; i++) {
+  const index = i
+  setTimeout(() =&gt; {
+    console.log(index)
+  })
+}
+</code></pre>
+
+<p>在ES6中,创造一个新的关键字 <code>const</code> ,该关键字可以定义一个常量,常量是不可修改的</p>
+
+<p>因此,我们可以用常量去记录每一次循环的 <code>i</code> ,在输出这个常量,则可以得到我们想要的结果</p>
 <ul class="pa0">
   
 </ul>
