@@ -6,10 +6,23 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 19 May 2020 22:51:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 20:43:32 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS 函数的执行时机</title>
+      <link>https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Wed, 20 May 2020 20:43:32 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
+      <description>执行时机 时机不同,得到的结果也是不同的,看下面的例子:
+// 例 1 let a = 1 function fn(){ console.log(a) } a = 2 fn() // 2  // 例 2 let a = 1 function fn(){ console.log(a) } fn() // 1 a = 2  例 1和例 2,代码其实都差不多,不同的只是 fn 的调用时机不同,例 1在代码a=2之后调用fn,a这个时候已经被重新赋值了,所以得出的结果为2;例 2调用fn,结果直接输出为1,后面a=2,对其完全没有影响
+现在我们知道了时机对函数的影响,我们继续来看下面这个例子:
+// 例 3 let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  你以为输出的结果会是 0,1,2,3,4,5 ?仿佛并不是这样,结果是 6,6,6,6,6,6,这是为什么呢?
+这里我们就要说一下 setTimeout ,这个API是指定一个定时器,该定时器在到时候执行里面的函数或代码</description>
+    </item>
     
     <item>
       <title>JS 对象基本用法</title>

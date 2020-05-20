@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-05-19T22:51:51+08:00" />
+<meta property="og:updated_time" content="2020-05-20T20:43:32+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,24 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+        JS 函数的执行时机
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      执行时机 时机不同,得到的结果也是不同的,看下面的例子:
+// 例 1 let a = 1 function fn(){ console.log(a) } a = 2 fn() // 2  // 例 2 let a = 1 function fn(){ console.log(a) } fn() // 1 a = 2  例 1和例 2,代码其实都差不多,不同的只是 fn 的调用时机不同,例 1在代码a=2之后调用fn,a这个时候已经被重新赋值了,所以得出的结果为2;例 2调用fn,结果直接输出为1,后面a=2,对其完全没有影响
+现在我们知道了时机对函数的影响,我们继续来看下面这个例子:
+// 例 3 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  你以为输出的结果会是 0,1,2,3,4,5 ?仿佛并不是这样,结果是 6,6,6,6,6,6,这是为什么呢?
+这里我们就要说一下 setTimeout ,这个API是指定一个定时器,该定时器在到时候执行里面的函数或代码
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -284,21 +302,51 @@ git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git th
   </div>
 </div></div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        第一篇博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      第一篇博客 我的第一篇博客
-    </div>
-  </div>
-</div></div>
-      
     </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
 
 </article>
 
