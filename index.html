@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/" />
 
-<meta property="og:updated_time" content="2020-05-20T20:43:32+08:00" />
+<meta property="og:updated_time" content="2020-05-25T22:05:17+08:00" />
 <meta itemprop="name" content="Clown博客">
 <meta itemprop="description" content="">
 
@@ -123,6 +123,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="color-inherit dim link">
+            浅析jQuery的设计思想
+          </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          目录  什么是 jQuery jQuery 的实现 获取元素 链式操作 创建元素 移动元素 删改元素  什么是 jQuery jQuery 是目前最长寿,也是目前世界使用最广泛的 javaScript 函数库,虽然jQuery现在已经过时,但很多大型的网站都还在使用着它.
+jQuery 的实现 前面说了 jQuery 是 javaScript 函数库,那么 jQuery 是怎么由 javaScript 构建出来的呢?
+封装 简单的来说,封装 就是把一些零散的代码组成一个组件.就像是电脑主机,CPU,内存条,硬盘,主板,显卡等零散的零件,用机箱将他们封装在一起,用户使用的时候,并不用知道里面是怎样摆放,是怎样运作的.
+接口 被封装的东西,需要暴露一些功能给外部,让用户可以通过这些功能与被封装的东西进行交互与通讯,这些功能我们就叫做接口.类似于电脑主机中的 USB 接口,耳机孔,电源插口等等.
+所以,jQuery 是由 javaScript 中许许多多的函数,语句等封装起来的一个库,而 jQuery 文档中提供的用法,我们称之为 API .
+接下来,我们来看看 jQuery 如何使用
+获取元素 我们要修改哪个元素,就在哪个元素上对其使用 jQuery,因此,我们必须先找到这个元素.
+$(document); //可以获取整个文档 $(&quot;#test&quot;); //可以获取 ID 为 test 的元素 $(&quot;.red&quot;); //可以获取整个页面 class 为 red 的元素 $(&quot;div.red&quot;); //可以获取 class 为 red 的div元素 $(&quot;#test&quot;).
+        </div>
+        <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/"
+          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
             JS 函数的执行时机
           </a>
@@ -174,40 +205,18 @@ Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 
 </article>
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
-            JS 语法
-          </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          表达式与语句 表达式 表达式是由运算元和运算符(可选)构成，并产生运算结果的语法结构
- 1 + 2的表达式的值是为3 add(1,2)表达式值为函数返回值 console.log表达式返回的值为函数本身  语句 由一个或多个关键字和表达式构成
- var a = 1 是一个语句  二者的区别  表达式一般都有值,语句可能有也可能没有 语句一般会改变环境(声明,赋值) 上面两句话并不是绝对的  标识符 是用来识别具体对象的一个名称
-规则  可以是Unicode字母,$,数字,_和中文 数字不能作为标识符的首个字符  变量名是标识符  var _ = 1 var $ = 2 var ___ = 6  注释 不好的注释  把代码翻译为中文 过时的注释 发泄不满的注释  好的注释  踩坑注释 遇到的问题,解决的方法  if语句 语法 if(表达式){ 语句1 }else{ 语句2 }  在{}中只有一句语句的时候可以省略,但不建议省略
-变态情况  表达式里可以非常变态,如 a = 1 语句1和语句2里可以非常变态,如嵌套 if else 缩进可以非常变态,如下
-        </div>
-        <a href="https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/"
-          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
+              JS 语法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/javascript%E6%A6%82%E8%BF%B0/" class="link black dim">
@@ -224,12 +233,6 @@ Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
               CSS 知识总结
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
-              CSS盒模型
             </a>
           </h2>
         
