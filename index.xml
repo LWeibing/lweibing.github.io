@@ -6,10 +6,23 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 25 May 2020 22:05:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 19:34:38 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOM事件机制和事件委托</title>
+      <link>https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
+      <pubDate>Tue, 26 May 2020 19:34:38 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
+      <description>DOM 事件机制 有三个 DIV 元素, #grandfather 包含 #father 包含 #child,并给三个 DIV 绑定一个点击事件,输出一段文字,当我们点击最内层的文字,谁的文字会最先打出来呢?
+&amp;lt;div id=&amp;quot;grandfather&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;father&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;child&amp;quot;&amp;gt;请点击我&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; let grandfather = document.querySelector(&#39;#grandfather&#39;); let father = document.querySelector(&#39;#father&#39;); let child = document.querySelector(&#39;#child&#39;); grandfather.onclick=()=&amp;gt;{ console.log(&#39;grandfather 被点击&#39;) } father.onclick=()=&amp;gt;{ console.log(&#39;father 被点击&#39;) } child.onclick=()=&amp;gt;{ console.log(&#39;child 被点击&#39;) } &amp;lt;/script&amp;gt;  IE5认为先执行 #child 中的函数的这种 从内岛外 的顺序,叫做事件冒泡
+网景认为先执行 #grandfather 中的函数的这种 从外到内 的顺序,叫做事件捕获
+于是 W3C发布标准: 首先 按照 从外到内 的顺序找监听函数,然后 按照 从内到外 的顺序找监听函数,如果找到监听函数就调用,并提供事件信息,没有就跳过
+// 事件绑定 API IE5: child.</description>
+    </item>
     
     <item>
       <title>浅析jQuery的设计思想</title>

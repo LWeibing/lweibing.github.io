@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/" />
 
-<meta property="og:updated_time" content="2020-05-25T22:05:17+08:00" />
+<meta property="og:updated_time" content="2020-05-26T19:34:38+08:00" />
 <meta itemprop="name" content="Clown博客">
 <meta itemprop="description" content="">
 
@@ -123,6 +123,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="color-inherit dim link">
+            DOM事件机制和事件委托
+          </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          DOM 事件机制 有三个 DIV 元素, #grandfather 包含 #father 包含 #child,并给三个 DIV 绑定一个点击事件,输出一段文字,当我们点击最内层的文字,谁的文字会最先打出来呢?
+&lt;div id=&quot;grandfather&quot;&gt; &lt;div id=&quot;father&quot;&gt; &lt;div id=&quot;child&quot;&gt;请点击我&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;script&gt; let grandfather = document.querySelector('#grandfather'); let father = document.querySelector('#father'); let child = document.querySelector('#child'); grandfather.onclick=()=&gt;{ console.log('grandfather 被点击') } father.onclick=()=&gt;{ console.log('father 被点击') } child.onclick=()=&gt;{ console.log('child 被点击') } &lt;/script&gt;  IE5认为先执行 #child 中的函数的这种 从内岛外 的顺序,叫做事件冒泡
+网景认为先执行 #grandfather 中的函数的这种 从外到内 的顺序,叫做事件捕获
+于是 W3C发布标准: 首先 按照 从外到内 的顺序找监听函数,然后 按照 从内到外 的顺序找监听函数,如果找到监听函数就调用,并提供事件信息,没有就跳过
+// 事件绑定 API IE5: child.
+        </div>
+        <a href="https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"
+          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="color-inherit dim link">
             浅析jQuery的设计思想
           </a>
@@ -174,43 +202,18 @@ $(document); //可以获取整个文档 $(&quot;#test&quot;); //可以获取 ID 
 </article>
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="color-inherit dim link">
-            JS 对象基本用法
-          </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          对象 object js中唯一一种复杂类型
- 无序的数据集合 键值对的集合  声明方式 let obj = {'name':'Tom','age':18} let obj = new Object({'name':'Tom'})  注意:
- 键名是字符串,不是标识符,可以包含任意字符 引号可以省略,省略之后就只能写标识符 就算省略了引号,键名还是字符串  属性名 所有的属性名会自动变成字符串
-Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 = 'name' let obj = { [p1]: 'Tom' }  这样写的话, obj 的属性名为 'name'
-细节:
- 不加 [] 的属性名会自动变为字符串 加了 [] 的属性名会被当做变量求值  隐藏属性 JS中每一个对象都有一个隐藏属性proto,这个属性存储着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,也就是说,隐藏属性proto中存储着原型的地址
-原型  每个对象都有原型
-原型里存着对象的共有属性,比如obj的原型就是一个对象,obj.proto存着这个对象的地址,这个对象里面有toString / constructor / valueOf 等属性
-        </div>
-        <a href="https://lwbing.top/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"
-          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://lwbing.top/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+              JS 对象基本用法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
@@ -227,12 +230,6 @@ Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
               浅析 URL
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
-              CSS 知识总结
             </a>
           </h2>
         
