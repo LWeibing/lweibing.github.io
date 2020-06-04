@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/" />
 
-<meta property="og:updated_time" content="2020-05-26T19:34:38+08:00" />
+<meta property="og:updated_time" content="2020-06-04T21:32:02+08:00" />
 <meta itemprop="name" content="Clown博客">
 <meta itemprop="description" content="">
 
@@ -123,6 +123,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90-mvc/" class="color-inherit dim link">
+            浅析 MVC
+          </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          MVC MVC 全名是Model View Controller是一种架构设计模式,将数据,界面的显示分离开来,当用户更新页面时,不需要重新编写全部代码.相当于把适用于一些任务的&rdquo;工具&rdquo;放在一起,当遇到类似的任务时,就可以用这个&rdquo;工具包&rdquo;,不用再去一个个的寻找,也可以说 MVC 是万金油,适用于大部分情况.
+MVC每个模块可以分为三个对象:
+ M - Model (数据模型) 负责操作所有数据
+const m = { data: { n: parseInt(localStorage.getItem('n')) }, update(data){ Object.assign(m.data,data) eventBar.trigger('m-updated') } }  V - View (视图) 负责所有 UI 界面
+const c = { init(container) { v.init(container) v.render(m.data.n) c.bindEvent() eventBar.on('m-updated',()=&gt;{ v.render(m.data.n) }) }, event: { &quot;click #add&quot;: &quot;add&quot;, &quot;click #sub&quot;: &quot;sub&quot;, &quot;click #mul&quot;: &quot;mul&quot;, &quot;click #div&quot;: &quot;div&quot; }, add() { m.update(m.data.n += 1) }, sub() { m.
+        </div>
+        <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90-mvc/"
+          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="color-inherit dim link">
             DOM事件机制和事件委托
           </a>
@@ -174,40 +202,18 @@ $(document); //可以获取整个文档 $(&quot;#test&quot;); //可以获取 ID 
 </article>
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
-            JS 函数的执行时机
-          </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          执行时机 时机不同,得到的结果也是不同的,看下面的例子:
-// 例 1 let a = 1 function fn(){ console.log(a) } a = 2 fn() // 2  // 例 2 let a = 1 function fn(){ console.log(a) } fn() // 1 a = 2  例 1和例 2,代码其实都差不多,不同的只是 fn 的调用时机不同,例 1在代码a=2之后调用fn,a这个时候已经被重新赋值了,所以得出的结果为2;例 2调用fn,结果直接输出为1,后面a=2,对其完全没有影响
-现在我们知道了时机对函数的影响,我们继续来看下面这个例子:
-// 例 3 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  你以为输出的结果会是 0,1,2,3,4,5 ?仿佛并不是这样,结果是 6,6,6,6,6,6,这是为什么呢?
-这里我们就要说一下 setTimeout ,这个API是指定一个定时器,该定时器在到时候执行里面的函数或代码
-        </div>
-        <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/"
-          class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">更多</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+              JS 函数的执行时机
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
@@ -224,12 +230,6 @@ $(document); //可以获取整个文档 $(&quot;#test&quot;); //可以获取 ID 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://lwbing.top/posts/javascript%E6%A6%82%E8%BF%B0/" class="link black dim">
               JavaScript的概述
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
-              浅析 URL
             </a>
           </h2>
         
