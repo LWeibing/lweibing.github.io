@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-06-04T21:32:02+08:00" />
+<meta property="og:updated_time" content="2020-06-09T20:24:22+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,37 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="link black dim">
+        Vue数据响应式
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue 数据响应式 &ldquo;响应式&rdquo;是指一个物体对外界的刺激做出反应.Vue数据响应式是指,当 data 数据改变时,Vue会通知使用该数据的代码,那么这是为什么呢?我们看下面的例子
+//例一 const myData = { n: 0, }; console.log(myData); // {n:0} let vm = new Vue({ el: &quot;#app&quot;, template: ` &lt;div&gt;{{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; `, data: myData, methods: { add() { this.n += 1; console.log(myData); //{n:(...)} }, }, });  我们可以看到,当点击按钮后, myData 发生了改变,这是为什么呢?再看下面这个例子
+//例子二 let obj1 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, 姓名() { return this.姓 + this.名; }, }; console.log(obj1.姓名()); //高圆圆 let obj2 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, get 姓名() { return this.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/vue%E7%9A%84%E5%88%9D%E8%AF%86/" class="link black dim">
+        Vue的初识
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue Vue 的作者是尤雨溪,英文名为 Evan You.Vue 是一套用于构建用户见面的渐进式框架,主要关注的是 V(视图层),M(数据模型)和 C(控制器)则被简化.
+Vue 项目的搭建 使用 @vue/cli  搜索@vue/cil,进入官网 打开文档,打开 创建一个项目 章节 全局安装,在终端运行命令行 yarn global add @vue/cli 选择使用的配置 在终端运行命令 vue create 文件夹名 即可创建一个 Vue 项目  CodeSandbox 网站  在浏览器地址栏输入codesandbox.io 选择 vue 项目,即可创建项目 可以根据自己的需求在网站上进行项目制作 可以选择 File -&gt; Export to ZIP 将文件下载至本地 解压文件压缩包,用 VScode 或 WebStorm 打开即可  自己搭建  使用 webpack 或者 rollup 进行搭建 这里不做详细介绍,可参考 https://www.jianshu.com/p/f502380062d1 该方式不适合新手,适合使用Vue半年以上的老手  使用 Vue 实例 从 HTML 得到视图 使用完整版的Vue
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -246,57 +277,6 @@ HTTP(基于TPC和IP两个协议)协议,还有FTP协议等等。
  锚点看起来有中文,实际上不支持中文 锚点无法在Network上看到的,因为锚点不会传给服务器   DNS Domain Name System 域名系统 作用:可以将域名解析为IP,浏览器通过该IP的80/443端口发送请求,访问页面.
 nslookup 可以查询IP地址和DNS记录,查看域名解析是否正常.
 IP 当你买了一个路由器,并连接了租用的宽带,你就有了一个属于自己的IP  路由器没有固定的外网IP,如果你重启了路由器,你有可能会被重新分配一个外网IP 路由器会在你家里创建一个内网,内网中的设备使用内网IP  路由器的功能  内网设备可以相互访问,不能直接访问外网,必须经过路由器中转 外网设备可以相互访问,无法直接访问你的内网,外网设备想把内容发送到内网,必须经过路由器 因此路由器也叫网关  特殊的IP  127.
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
-        CSS 知识总结
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      文档流 盒模型 CSS 布局 CSS 定位 CSS 动画 层叠上下文 浏览器渲染原理 文档流 流动方向  inline
-inline元素从左至右,位置不够时,可能会将元素分为两块宽度由内部的inline元素的和决定不能指定宽度高度由line-height间接决定,与height无关
- block
-宽度默认自动计算,可以用width指定高度由内部文档流元素决定,可以设置height决定
- inline-block
-从左至右,位置不够时,不会将元素分为两块结合两者的特点,可以用width指定宽度,也可以用height设置高度
-  注意:
- 现在不再区分内联元素和块级元素,而是有display决定. 千万不要在 inline元素中加block元素.  overflow 当内容的宽度或者高度大于容器的宽度或高度时,会产生溢出现象.
-可用overflow属性设置:
- visible:默认值,内容不会被改变,显示在容器外部 hidden:内容会被裁剪,适应容器的大小,没有滚动条 scroll:内容会被裁剪,适应容器大小,显示滚动条(无论内容是否超出容器,都会显示滚动条) auto:内容会被裁剪,适应容器大小,显示滚动条(判断内容是否超出容器,超出容器就显示滚动条,否则不显示)  脱离文档流 当元素使用float和position:absolute | fixed属性,都会使元素脱离文档流,脱离文档流后,父元素将不再计算其高度
-盒模型 CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
-标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
-标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
-标准盒子模型的的大小 = width(content) + padding + border + margin
-怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
-        CSS盒模型
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
-标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
-标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
-标准盒子模型的的大小 = width(content) + padding + border + margin
-怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
-怪异盒子模型的的大小 = width(content + padding + border) + margin
-如何使用盒子模型 我们可以通过 box-sizing 来设置使用什么盒子模型.
- content-box: 默认值,即是标准盒子模型.
- border-box: 怪异盒子模型,程序员更多的使用这个,可以更好的设置一个元素的宽高.
-  使用案例 HTML  &lt;div class=&quot;content-box&quot;&gt;&lt;/div&gt; &lt;div class=&quot;border-box&quot;&gt;&lt;/div&gt;  CSS div { width: 200px; height: 100px; border: 5px solid red; padding: 30px; margin: 30px; } .
     </div>
   </div>
 </div></div>

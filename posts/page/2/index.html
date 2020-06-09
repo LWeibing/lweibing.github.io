@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-06-04T21:32:02+08:00" />
+<meta property="og:updated_time" content="2020-06-09T20:24:22+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,57 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+        CSS 知识总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      文档流 盒模型 CSS 布局 CSS 定位 CSS 动画 层叠上下文 浏览器渲染原理 文档流 流动方向  inline
+inline元素从左至右,位置不够时,可能会将元素分为两块宽度由内部的inline元素的和决定不能指定宽度高度由line-height间接决定,与height无关
+ block
+宽度默认自动计算,可以用width指定高度由内部文档流元素决定,可以设置height决定
+ inline-block
+从左至右,位置不够时,不会将元素分为两块结合两者的特点,可以用width指定宽度,也可以用height设置高度
+  注意:
+ 现在不再区分内联元素和块级元素,而是有display决定. 千万不要在 inline元素中加block元素.  overflow 当内容的宽度或者高度大于容器的宽度或高度时,会产生溢出现象.
+可用overflow属性设置:
+ visible:默认值,内容不会被改变,显示在容器外部 hidden:内容会被裁剪,适应容器的大小,没有滚动条 scroll:内容会被裁剪,适应容器大小,显示滚动条(无论内容是否超出容器,都会显示滚动条) auto:内容会被裁剪,适应容器大小,显示滚动条(判断内容是否超出容器,超出容器就显示滚动条,否则不显示)  脱离文档流 当元素使用float和position:absolute | fixed属性,都会使元素脱离文档流,脱离文档流后,父元素将不再计算其高度
+盒模型 CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
+        CSS盒模型
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+怪异盒子模型的的大小 = width(content + padding + border) + margin
+如何使用盒子模型 我们可以通过 box-sizing 来设置使用什么盒子模型.
+ content-box: 默认值,即是标准盒子模型.
+ border-box: 怪异盒子模型,程序员更多的使用这个,可以更好的设置一个元素的宽高.
+  使用案例 HTML  &lt;div class=&quot;content-box&quot;&gt;&lt;/div&gt; &lt;div class=&quot;border-box&quot;&gt;&lt;/div&gt;  CSS div { width: 200px; height: 100px; border: 5px solid red; padding: 30px; margin: 30px; } .
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">

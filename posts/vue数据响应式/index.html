@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vue数据响应式 | Clown博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Vue数据响应式" />
+<meta property="og:description" content="Vue 数据响应式 &ldquo;响应式&rdquo;是指一个物体对外界的刺激做出反应.Vue数据响应式是指,当 data 数据改变时,Vue会通知使用该数据的代码,那么这是为什么呢?我们看下面的例子
+//例一 const myData = { n: 0, }; console.log(myData); // {n:0} let vm = new Vue({ el: &quot;#app&quot;, template: ` &lt;div&gt;{{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, data: myData, methods: { add() { this.n &#43;= 1; console.log(myData); //{n:(...)} }, }, });  我们可以看到,当点击按钮后, myData 发生了改变,这是为什么呢?再看下面这个例子
+//例子二 let obj1 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, 姓名() { return this.姓 &#43; this.名; }, }; console.log(obj1.姓名()); //高圆圆 let obj2 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, get 姓名() { return this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lwbing.top/posts/vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" />
+<meta property="article:published_time" content="2020-06-09T20:24:22+08:00" />
+<meta property="article:modified_time" content="2020-06-09T20:24:22+08:00" />
+<meta itemprop="name" content="Vue数据响应式">
+<meta itemprop="description" content="Vue 数据响应式 &ldquo;响应式&rdquo;是指一个物体对外界的刺激做出反应.Vue数据响应式是指,当 data 数据改变时,Vue会通知使用该数据的代码,那么这是为什么呢?我们看下面的例子
+//例一 const myData = { n: 0, }; console.log(myData); // {n:0} let vm = new Vue({ el: &quot;#app&quot;, template: ` &lt;div&gt;{{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, data: myData, methods: { add() { this.n &#43;= 1; console.log(myData); //{n:(...)} }, }, });  我们可以看到,当点击按钮后, myData 发生了改变,这是为什么呢?再看下面这个例子
+//例子二 let obj1 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, 姓名() { return this.姓 &#43; this.名; }, }; console.log(obj1.姓名()); //高圆圆 let obj2 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, get 姓名() { return this.">
+
+
+<meta itemprop="datePublished" content="2020-06-09T20:24:22&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-09T20:24:22&#43;08:00" />
+<meta itemprop="wordCount" content="360">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue数据响应式"/>
+<meta name="twitter:description" content="Vue 数据响应式 &ldquo;响应式&rdquo;是指一个物体对外界的刺激做出反应.Vue数据响应式是指,当 data 数据改变时,Vue会通知使用该数据的代码,那么这是为什么呢?我们看下面的例子
+//例一 const myData = { n: 0, }; console.log(myData); // {n:0} let vm = new Vue({ el: &quot;#app&quot;, template: ` &lt;div&gt;{{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, data: myData, methods: { add() { this.n &#43;= 1; console.log(myData); //{n:(...)} }, }, });  我们可以看到,当点击按钮后, myData 发生了改变,这是为什么呢?再看下面这个例子
+//例子二 let obj1 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, 姓名() { return this.姓 &#43; this.名; }, }; console.log(obj1.姓名()); //高圆圆 let obj2 = { 姓: &quot;高&quot;, 名: &quot;圆圆&quot;, get 姓名() { return this."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+<header>
+  <div class="bg-black">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lwbing.top/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Clown博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+  </div>
+</header>
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://lwbing.top/posts/vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://lwbing.top/posts/vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/&amp;text=Vue%e6%95%b0%e6%8d%ae%e5%93%8d%e5%ba%94%e5%bc%8f" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://lwbing.top/posts/vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/&amp;title=Vue%e6%95%b0%e6%8d%ae%e5%93%8d%e5%ba%94%e5%bc%8f" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">Vue数据响应式</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-06-09T20:24:22&#43;08:00">June 9, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="vue-数据响应式">Vue 数据响应式</h2>
+
+<p>&ldquo;响应式&rdquo;是指一个物体对外界的刺激做出反应.<code>Vue数据响应式</code>是指,当 data 数据改变时,<code>Vue</code>会通知使用该数据的代码,那么这是为什么呢?我们看下面的例子</p>
+
+<pre><code class="language-javascript">//例一
+const myData = {
+  n: 0,
+};
+console.log(myData); // {n:0}
+let vm = new Vue({
+  el: &quot;#app&quot;,
+  template: `
+   &lt;div&gt;{{n}}
+   &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;
+   &lt;/div&gt;
+  `,
+  data: myData,
+  methods: {
+    add() {
+      this.n += 1;
+      console.log(myData); //{n:(...)}
+    },
+  },
+});
+</code></pre>
+
+<p>我们可以看到,当点击按钮后, <code>myData</code> 发生了改变,这是为什么呢?再看下面这个例子</p>
+
+<pre><code class="language-javascript">//例子二
+let obj1 = {
+  姓: &quot;高&quot;,
+  名: &quot;圆圆&quot;,
+  姓名() {
+    return this.姓 + this.名;
+  },
+};
+console.log(obj1.姓名()); //高圆圆
+
+let obj2 = {
+  姓: &quot;高&quot;,
+  名: &quot;圆圆&quot;,
+  get 姓名() {
+    return this.姓 + this.名;
+  },
+};
+console.log(obj2.姓名); //高圆圆
+
+let obj3 = {
+  姓: &quot;高&quot;,
+  名: &quot;圆圆&quot;,
+  get 姓名() {
+    return this.姓 + this.名;
+  },
+  set 姓名(xxx) {
+    this.姓 = xxx[0];
+    this.名 = xxx.substring(1);
+  },
+};
+obj3.姓名 = &quot;刘诗诗&quot;;
+console.log(obj3.姓名); //刘诗诗
+console.log(obj3); // {姓名:(...)}
+</code></pre>
+
+<p>例子二和例子一相比,可以看出,在<code>data</code> 发生改变后,两个例子都发生了同样的改变,按照例子二推论下来,可以看出来,例子一的<code>n</code>同样被放入了 <code>get</code> 和 <code>set</code>.我们可以得出看到,在<code>obj3</code>中,我们可以读和改这个<code>姓名</code>这个属性,但是这个属性实际上是不存在的.</p>
+
+<h4 id="那如果我们要添加新的属性怎么办">那如果我们要添加新的属性怎么办?</h4>
+
+<p><code>Object.defineProperty(obj,'n',{...})</code> 可以给对象添加属性 <code>value</code>,可以给对象添加 <code>getter/setter</code>.</p>
+
+<pre><code class="language-javascript">//例三
+let _xxx = 0;
+Object.defineProperty(obj3, &quot;xxx&quot;, {
+  get() {
+    return _xxx;
+  },
+  set(value) {
+    _xxx = value;
+  },
+});
+console.log(obj3);
+</code></pre>
+
+<p>可以发现,<code>obj3</code> 多出了<code>xxx</code>这个不存在的属性.</p>
+
+<p>知道了上面这些理论和方法之后,我们现在来了解一下,为什么 <code>data</code> 会产生变化</p>
+
+<pre><code class="language-javascript">let myData5 = {n:0}
+let data5 = proxy2({ data:myData5 })
+function proxy2({data}){
+  let value = data.n
+  Object.defineProperty(data, 'n', {
+    get(){
+      return value
+    },
+    set(newValue){
+      if(newValue&lt;0)return
+      value = newValue
+    }
+  })
+</code></pre>
+
+<p>经过一系列的推理,可以得出上面的这串代码,可以看到<code>let data5 = proxy2({ data:myData5 })</code>和<code>let vm = new Vue({data:myData})</code> 很相似,所以我们可以知道,当<code>let vm = new Vue({data:myData})</code> 就是让 <code>vm</code> 成为 <code>myData</code> 的代理,同时对 <code>myData</code> 上的所有属性进行监控,这是为了防止其变化了,<code>vm</code> 却不知道.</p>
+
+<p>所以当 <code>vm</code> 得到属性变化的通知时,就会 render(data)</p>
+
+<h2 id="vue-中的-bug">Vue 中的 bug</h2>
+
+<h3 id="object-defineproperty-的问题">Object.defineProperty 的问题</h3>
+
+<p>当我们使用 <code>Object.defineProperty(obj,'n',{...})</code> 方法时,必须得先设置一个 <code>'n'</code> 这样才能够进行 <code>监听和代理</code> ,如果一开始并没有给出 <code>n</code> 怎么办?</p>
+
+<pre><code class="language-javascript">// bug 1
+new Vue({
+  data: {},
+  template: `
+    &lt;div&gt;{{n}}&lt;/div&gt;
+  `,
+}).$mount(&quot;#app&quot;);
+</code></pre>
+
+<pre><code class="language-javascript">// bug 2
+new Vue({
+  data: {
+    obj: {
+      a: 0, // obj.a 会被 Vue 监听 &amp; 代理
+    },
+  },
+  template: `
+    &lt;div&gt;
+      {{obj.b}}
+      &lt;button @click=&quot;setB&quot;&gt;set b&lt;/button&gt;
+    &lt;/div&gt;
+  `,
+  methods: {
+    setB() {
+      this.obj.b = 1; //请问，页面中会显示 1 吗？
+    },
+  },
+}).$mount(&quot;#app&quot;);
+</code></pre>
+
+<p>Vue 没办法监听一开始不存在的 obj.b</p>
+
+<p>解决办法:</p>
+
+<ol>
+<li>一开始就把 <code>key</code> 都声明好,后面不再加入属性</li>
+<li>使用 <code>Vue.set</code> 或者 <code>this.$set</code></li>
+</ol>
+
+<h4 id="vue-set-和-this-set">Vue.set 和 this.\$set</h4>
+
+<p>作用:</p>
+
+<ul>
+<li>新增 <code>key</code></li>
+<li>自动创建代理和监听(如果没有创建过)</li>
+<li>触发 UI 更新(但不会立即触发)</li>
+</ul>
+
+<h3 id="data-中有数组">data 中有数组</h3>
+
+<p>没有办法提前声明所有<code>key</code></p>
+
+<pre><code class="language-javascript">new Vue({
+  data: {
+    array: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;],
+  },
+  template: `
+    &lt;div&gt;
+      {{array}}
+      &lt;button @click=&quot;setD&quot;&gt;set d&lt;/button&gt;
+    &lt;/div&gt;
+  `,
+  methods: {
+    setD() {
+      this.array[3] = &quot;d&quot;; //请问，页面中会显示 'd' 吗？
+      // 等下，你为什么不用 this.array.push('d')
+    },
+  },
+}).$mount(&quot;#app&quot;);
+</code></pre>
+
+<p>解决方法:尤雨溪篡改了 7 个数组的 API,可以进行数组的增删,这 7 个 API 会自动处理监听和代理,并更新 UI</p>
+
+<h2 id="我对数据格式化的理解">我对数据格式化的理解</h2>
+
+<p>通过上面知识的学习和理解,我认为数据格式化就像是人的非条件反射,当人手指碰到刺痛,灼热等,手部的感觉神经就会通知神经中枢,再由神经中枢发送响应给手部的运动神经,人就会立刻缩回手;在 Vue 中,当监听到 data 发生变化时,Vue 会通知 vm ,再由 vm 进行 render(data).</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lwbing.top/" >
+    &copy;  Clown博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
