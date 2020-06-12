@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-06-09T20:24:22+08:00" />
+<meta property="og:updated_time" content="2020-06-12T20:57:58+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
+        sync 修饰符
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      App.vue
+&lt;template&gt; &lt;div class=&quot;app&quot;&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money=&quot;total&quot; v-on:update:money=&quot;total = $event&quot;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &quot;./Child.vue&quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt; &lt;style&gt; .app { border: 3px solid red; padding: 10px; } &lt;/style&gt;  Child.vue
+&lt;template&gt; &lt;div class=&quot;child&quot;&gt; {{money}} &lt;button @click=&quot;$emit('update:money', money-100)&quot;&gt; &lt;span&gt;花钱&lt;/span&gt; &lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&quot;money&quot;] }; &lt;/script&gt; &lt;style&gt; .
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -250,33 +266,6 @@ Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 
        JavaScript的历史 JavaScript的诞生 JavaScript之父,布莱登在1995年进入网景公司,公司要求为其浏览器添加一个脚本功能,而且还必须要蹭Java的热度,于JavaScript功能被开发了出来.由于布莱登只花了十天的时间设计了JS的最初版本,所以当时的JavaScript只是一个不起眼的小功能,而且有很多bug.
 1996年8月,IE3发布,并支持JScript(微软实现的JS),于是网景在三个月后向ECMA提交语言标准,但是由于版权问题,不叫JavaScript,而改为ECMAScript.
 JavaScript的发展  1997年6月,第一版的ECMAScript发布 1999年12月,第三版ECMAScript发布,这个版本是目前世界上使用最广泛的 JS 版本. 2004年4月,谷歌发布Gmail在线网页,让当时认为网页只能看图片和新闻的人们眼前一亮. 2005年,谷歌运用的这种技术被称之为AJAX,前端技术从此正式出现. 2006年,JQuery发布,在未来的十年里,JQuery一直大放异彩,直到IE没落,才没有那么火,但至今依旧有很多网站在使用着他 2009年12月,ECMAScript第五版发布,增加了一些功能.Ryan基于Chrome的JS引擎V8,创建了Node.js 2010年,Isaac基于Node.js写出了npm,前端工程师就可以开始在浏览器之外执行JS,Node.js迅速风靡. 2011年,智能手机的发布和Nokia的没落,前端工程师迎来解放前夕. 2015年6月,ECMAScript第六版发布,新浏览器都支持这个版本,之后每年发布一个版本,并以该年份命名. 2016年,Chrome占据全球份额的62%,超过了IE,同年淘宝天猫宣布不再支持IE6,IE7和IE8,让中国摆脱了IE的支配,前端开始急速发展. 在这期间,JavaScript有很多技术推出,像gulp,grunt,yeoman,reqirejs,webpack,Angular,React,Vue等,虽然至今已有很多没落,但也有很多一直在进步.  JavaScript的缺陷  不适合大型开发 非常小的标准库 null和undefined 全局变量难以控制 自动插入行尾分号 加号运算符 NaN 数组和对象的区分 == 和 === 基本类型的包装对象  
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
-        浅析 URL
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      URL的组成 URL也叫统一资源定位符,由 协议 + 域名 + 端口号 + 路径 + 查询参数 + 锚点 组成  协议
-HTTP(基于TPC和IP两个协议)协议,还有FTP协议等等。
- 域名
- 域名是对IP的别称 一个域名可以对应不同的IP,这叫均衡负载,防止一台机器扛不住 一个IP可以对应不同的域名,这叫共享主机,资金不够的开发者会这么做.  端口号
-一台机器可以提供很多服务,每个服务的号码就是端口
- HTTP 服务最好使用 80端口 HTTPS 服务最好使用 443端口 FTP 服务最好使用 21端口 一共有65535个端口(基本够用) 0-1023号端口是留给系统使用的,你只有拥有了管理权限,才能使用这1024个端口 其他端口都可以给普通用户使用 端口若被占用,则只能换一个端口  路径
-是服务器上的一个目录或地址,以这个地址访问不同的页面,不是URL必须的部分
- 查询参数
-在问号后面拼接的一串字符,可以查询相关信息,可以在同一个页面,查看不同的内容
- 锚点
-定位页面的位置
- 锚点看起来有中文,实际上不支持中文 锚点无法在Network上看到的,因为锚点不会传给服务器   DNS Domain Name System 域名系统 作用:可以将域名解析为IP,浏览器通过该IP的80/443端口发送请求,访问页面.
-nslookup 可以查询IP地址和DNS记录,查看域名解析是否正常.
-IP 当你买了一个路由器,并连接了租用的宽带,你就有了一个属于自己的IP  路由器没有固定的外网IP,如果你重启了路由器,你有可能会被重新分配一个外网IP 路由器会在你家里创建一个内网,内网中的设备使用内网IP  路由器的功能  内网设备可以相互访问,不能直接访问外网,必须经过路由器中转 外网设备可以相互访问,无法直接访问你的内网,外网设备想把内容发送到内网,必须经过路由器 因此路由器也叫网关  特殊的IP  127.
     </div>
   </div>
 </div></div>

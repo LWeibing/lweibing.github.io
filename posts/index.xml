@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 09 Jun 2020 20:24:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 20:57:58 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sync 修饰符</title>
+      <link>https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Fri, 12 Jun 2020 20:57:58 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>App.vue
+&amp;lt;template&amp;gt; &amp;lt;div class=&amp;quot;app&amp;quot;&amp;gt; App.vue 我现在有 {{total}} &amp;lt;hr&amp;gt; &amp;lt;Child :money=&amp;quot;total&amp;quot; v-on:update:money=&amp;quot;total = $event&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;quot;./Child.vue&amp;quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .app { border: 3px solid red; padding: 10px; } &amp;lt;/style&amp;gt;  Child.vue
+&amp;lt;template&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt; {{money}} &amp;lt;button @click=&amp;quot;$emit(&#39;update:money&#39;, money-100)&amp;quot;&amp;gt; &amp;lt;span&amp;gt;花钱&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;quot;money&amp;quot;] }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .</description>
+    </item>
     
     <item>
       <title>Vue数据响应式</title>
