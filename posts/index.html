@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-09-22T23:19:44+08:00" />
+<meta property="og:updated_time" content="2020-11-04T21:34:54+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -97,14 +97,67 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/" class="link black dim">
-        React 函数组件
+      <a href="https://lwbing.top/posts/echarts-%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+        Echarts 的使用
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
-创建方式 1 const Hello = (props) =&gt; { return &lt;div&gt;{props.message}&lt;/div&gt; } 2 const Hello = props =&gt; &lt;div&gt;{props.message}&lt;/div&gt; 3 function Hello(props){ return &lt;div&gt;{props.message}&lt;/div&gt; }  props的使用 直接读取参数 props.xxx
-import React from &quot;react&quot;; export default function App() { return ( &lt;div className=&quot;App&quot;&gt; &lt;Son say=&quot;我是儿子&quot;/&gt; &lt;/div&gt; ); } const Son =(props)=&gt;{ return( &lt;div&gt; {props.say} &lt;/div&gt; ) }  useState的使用 函数组件中没有类组件中的state,使用 useState Hooks API, 该 API 返回数组，第一项读，第二项写
+      引入 CDN 直接在 html 引入 &lt;script scr='path/to/echarts.min.js'&gt;&lt;/script&gt;，然后使用全局变量 window.echarts
+webpack yarn add echarts yarn add --dev @types/echarts import echarts from 'echarts' 或者 var echarts = require('echarts')  然后使用 echarts即可
+常用配置 options = { tooltip: { //提示框 show: true | false, //是否展示 triggerOn: 'click'| 'mousemove' | 'click | mousemove' | 'none', //提示框触发的条件 formatter: '{c}', //提示框浮层内容格式器，支持字符串模板和回调函数两种形式。 position: 'top' | 'bottom', //提示框位置 alwaysShowContent: true | false //是否总是显示提示框 }, xAxis：{ // X轴 show: true | false, position: 'top' | 'bottom', type: 'value' | 'category' | 'time' | 'log', //X轴类型 数值轴 | 类目轴 | 时间轴 | 对数轴 name: 'xxx', //X轴名称 nameLocation: 'start' | 'middle/center' | 'end', //X轴名称位置 axisLine: { show: true, lineStyle: { //X轴的样式 color: &quot;rgba(220, 43, 43, 1)&quot; width: 1 } }, axisTick: { //X轴刻度相关设置 show: true, alignWithLabel:true, //刻度线和标签对齐 inside: true, //刻度是否朝内 length: 5, //刻度的长度 lineStyle: { //刻度线相关设置 width: 0.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/ts-%E4%B8%AD-svg-%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+        TS 中 SVG 的使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      首先，在 shims-vue.d.ts 文件中输入
+declare module &quot;*.svg&quot; { const content: string export default content }  可以解决引入的路径问题
+在终端输入 yarn add svg-sprite-loader -D,安装 svg-loader 后进入 vue.config.js文件进行配置
+const path = require(id:'patg') module.export={ lintOnSave: false. chainWebpack: config=&gt;{ const dir = path.resolve(_dirname,'src/assets/icons') //文件目录 config.module .rule('svg-sprite') //规则 .test(/\.svg$/) // 匹配以 .svg 结尾 .include.add(dir).end //包含 icons 目录 .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract:false}).end() // 使用 svg-loader config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'),[{plainSprite: true}]) // 添加插件 cofig.module.rule('svg').exclude.add(dir) //其他 svg loader 排除 icons 目录 } }  在页面中使用
+import home from @/assets/icons/home.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/react-hooks%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+        React Hooks的使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      useState 使用状态 const [n,setN] = React.useState(0) const [user,setUser] = React.useState({name:'Jack'})  注意事项  不可局部更新
+如果 state 是一个对象，setState 不会自动合并属性
+import React, { useState } from &quot;react&quot;; import &quot;./styles.css&quot;; export default function App() { const [user,setUser] = useState({name:'Jack',age:18}) const Click = ()=&gt;{ setUser({ name:'Tom' }) } return ( &lt;div className=&quot;App&quot;&gt; &lt;h1&gt;{user.name}&lt;/h1&gt; &lt;h2&gt;{user.age}&lt;/h2&gt; &lt;button onClick={Click}&gt;Click&lt;/button&gt; &lt;/div&gt; ); }  效果 可以用 ... 操作符解决
+ 地址要改变
+setState(obj) 如果 obj 地址不变，React 就会认为数据没有变化
+import React, { useState } from &quot;react&quot;; import &quot;.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/react-usememo%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+        React useMemo的使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      React.memo 首先我们先来了解一下 React.memo
+import React, { useState } from &quot;react&quot;; import &quot;./styles.css&quot;; export default function App() { const [n,setN] = useState(0) const [m,setM] = useState(0) const addN=()=&gt;{ setN(i=&gt;i+1) } const addM=()=&gt;{ setM(i=&gt;i+1) } return ( &lt;div className=&quot;App&quot;&gt; &lt;h1&gt;n:{n}&lt;/h1&gt; &lt;Child value={m}/&gt; &lt;button onClick={addN}&gt;n+1&lt;/button&gt; &lt;button onClick={addM}&gt;m+1&lt;/button&gt; &lt;/div&gt; ); } const Child =(props)=&gt; { console.log('Child 执行了') return &lt;h1&gt;m:{props.value}&lt;/h1&gt;; }  效果 例子中，当 n和 m 变化时，因为&lt;App&gt;重新渲染, 所以Child 函数重新执行，使用 React.memo 我们再来看看
+import React, { useState } from &quot;react&quot;; import &quot;.
     </div>
   </div>
 </div></div>
@@ -122,6 +175,22 @@ import React from &quot;react&quot;; export default function App() { return ( &l
 创建方式 ES5（过时的） 由于 ES5 不支持 class，才用这种方式
 import React from 'react' const A=React.createClass({ render(){ return ( &lt;div&gt;hi&lt;/div&gt; ) } }) export default A  ES6方式（推荐使用） import React from 'react' Class B extends React.Component{ constructor(props){ super(); } render(){ return ( &lt;div&gt;hi&lt;/div&gt; ) } } export default B  props的使用  接受外部数据，可以直接读取属性 this.props.xxx，不能改写 props ,应该由数据的主人，也就是外部去修改 接受外部函数，可以在恰当的时机调用该函数，该函数一般是父组件的函数
 import React from &quot;react&quot;; export default function App() { return ( &lt;div className=&quot;App&quot;&gt; &lt;Son say=&quot;我是儿子&quot;/&gt; &lt;/div&gt; ); } class Son extends React.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/" class="link black dim">
+        React 函数组件
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
+创建方式 1 const Hello = (props) =&gt; { return &lt;div&gt;{props.message}&lt;/div&gt; } 2 const Hello = props =&gt; &lt;div&gt;{props.message}&lt;/div&gt; 3 function Hello(props){ return &lt;div&gt;{props.message}&lt;/div&gt; }  props的使用 直接读取参数 props.xxx
+import React from &quot;react&quot;; export default function App() { return ( &lt;div className=&quot;App&quot;&gt; &lt;Son say=&quot;我是儿子&quot;/&gt; &lt;/div&gt; ); } const Son =(props)=&gt;{ return( &lt;div&gt; {props.say} &lt;/div&gt; ) }  useState的使用 函数组件中没有类组件中的state,使用 useState Hooks API, 该 API 返回数组，第一项读，第二项写
     </div>
   </div>
 </div></div>
@@ -197,80 +266,6 @@ JSX Vue 中有 vue-loader，React 中有 JSX，你以为是 jsx-loader，其实�
   </div>
 </div></div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
-        Vue中的模板指令语法与修饰符
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      指令 Vue中的指令就是指 v- 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性
-表达式  {{ obj.a }} 表达式 {{ n + 1 }} 可以添加任何参数运算 {{ fn(n) }} 可以调用任何函数 当值为 undefined 或者 null 时，则不显示 也可以使用 &lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt; 的写法来展示  HTML 内容 v-html 可以使得表达式中的所含的标签生效
-&lt;div id=&quot;app&quot;&gt; &lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt; &lt;/div&gt; new Vue({ el: '#app', data:{ x:&lt;strong&gt;hi&lt;/strong&gt; } })  显示值为：hi
-输出{{ n }} 如果我们要输出{{ n }},直接写入模板的话，则会被模板编译为 n 的值,用v-pre可以不被模板进行编译
-&lt;div v-pre&gt;{{ n }}&lt;/div&gt; 显示值为：{{ n }}  绑定属性 使用 v-bind 来进行属性的绑定，v-bind 可以简写为 :
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/provide-%E5%92%8C-inject/" class="link black dim">
-        Provide 和 Inject
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Provide、Inject 提供和注入，这两个选项是一起用的，祖先组件可以使用Provide给子孙组件提供自身的属性和方法，不论子孙组件的层级有多深；子孙组件可以通过 Inject 获取到祖先组件的属性和方法
-GrandFather.vue
-&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;Father&gt; &lt;/Father&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Father from &quot;./components/Father.vue&quot; export default { provide:{ name:&quot;爷爷&quot; }, components:{Father} }; &lt;/script&gt;  Father.vue
-&lt;template&gt; &lt;Child&gt;&lt;/Child&gt; &lt;/template&gt; &lt;script&gt; import Child from &quot;../components/Child.vue&quot; export default { components:{Child} }; &lt;/script&gt;  Child.vue
-&lt;template&gt; &lt;div&gt;{{name}}&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { inject:[&quot;name&quot;] }; &lt;/script&gt;  效果： 可以看出 Provide 是对象形式而 Inject 是字符串数组形式，作用是大范围的 data 和 methods 等共用
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/mixins%E5%92%8Cextends%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
-        mixins 和 extends 的使用
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      mixins mixins 就是混入，用简单的话来说就是复制，作用是为了减少重复，并且一个混入对象可以包含任意组件选项。
-Mixin.js
-const Mixin = { methods:{ hello(){ console.log('hello') } }, created(){ this.hello() } } export default Mixin;  App.vue
-&lt;template&gt; &lt;div id=&quot;app&quot;&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; import myMixin from &quot;./Mixin.js&quot;; export default { mixins:[myMixin] }; &lt;/script&gt;  效果 ps：可以引用多个 mixins
-选项合并 当组件和混入对象含有同名选项时，这些选项将以恰当的方式进行“合并”，以组件数据优先
-Mixin.js
-const Mixin = { data(){ return{ x :5, y : 10 } } } export default Mixin;  App.vue
-&lt;template&gt; &lt;div id=&quot;app&quot;&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; import myMixin from &quot;.
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/directive-%E6%8C%87%E4%BB%A4/" class="link black dim">
-        Directive 指令
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      全局指令 使用 Vue.directive('x',directiveOptions) 可以生成一个全局的 v-x 指令，在任何组件都可以使用该指令 main.js
-Vue.directive('x',{ inserted(el){ el.addEventListener('click',()=&gt;console.log('x')) } })  App.vue
-&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;p v-x&gt;打印&lt;/p&gt; &lt;/div&gt; &lt;/template&gt;  效果： 局部指令 使用 directives 可以生成一个局部的 v-y 指令，该指令只能在声明的组件中使用
-&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;button v-y&gt;打印&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &quot;App&quot;, directives:{ 'y':{ inserted(el){ el.addEventListener('click',()=&gt;console.log('y')) } } } }; &lt;/script&gt;  效果： Directive 指令中的钩子函数  bind: 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置 inserted: 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中) update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下) componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用 unbind：只调用一次，指令与元素解绑时调用。  钩子函数参数 指令钩子函数会被传入以下参数： * el：指令所绑定的元素，可以用来直接操作 DOM * binding：一个对象，包含以下 property： * name：指令名，不包括 v- 前缀 * value：指令的绑定值，例如：v-my-directive=&quot;1 + 1&quot; 中，绑定值为 2 * oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用 * expression：字符串形式的指令表达式。例如 v-my-directive=&quot;1 + 1&quot; 中，表达式为 &quot;1 + 1&quot; * arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 &quot;foo&quot; * modifiers：一个包含修饰符的对象。例如：v-my-directive.
-    </div>
-  </div>
-</div></div>
-      
     </section>
 
 <ul class="pagination">
@@ -318,12 +313,23 @@ Vue.directive('x',{ inserted(el){ el.addEventListener('click',()=&gt;console.log
     <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

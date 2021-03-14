@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/" />
 
-<meta property="og:updated_time" content="2020-09-22T23:19:44+08:00" />
+<meta property="og:updated_time" content="2020-11-04T21:34:54+08:00" />
 <meta itemprop="name" content="Clown博客">
 <meta itemprop="description" content="">
 
@@ -123,16 +123,16 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/" class="color-inherit dim link">
-            React 函数组件
+          <a href="https://lwbing.top/posts/echarts-%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            Echarts 的使用
           </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
-创建方式 1 const Hello = (props) =&gt; { return &lt;div&gt;{props.message}&lt;/div&gt; } 2 const Hello = props =&gt; &lt;div&gt;{props.message}&lt;/div&gt; 3 function Hello(props){ return &lt;div&gt;{props.message}&lt;/div&gt; }  props的使用 直接读取参数 props.xxx
-import React from &quot;react&quot;; export default function App() { return ( &lt;div className=&quot;App&quot;&gt; &lt;Son say=&quot;我是儿子&quot;/&gt; &lt;/div&gt; ); } const Son =(props)=&gt;{ return( &lt;div&gt; {props.say} &lt;/div&gt; ) }  useState的使用 函数组件中没有类组件中的state,使用 useState Hooks API, 该 API 返回数组，第一项读，第二项写
+          引入 CDN 直接在 html 引入 &lt;script scr='path/to/echarts.min.js'&gt;&lt;/script&gt;，然后使用全局变量 window.echarts
+webpack yarn add echarts yarn add --dev @types/echarts import echarts from 'echarts' 或者 var echarts = require('echarts')  然后使用 echarts即可
+常用配置 options = { tooltip: { //提示框 show: true | false, //是否展示 triggerOn: 'click'| 'mousemove' | 'click | mousemove' | 'none', //提示框触发的条件 formatter: '{c}', //提示框浮层内容格式器，支持字符串模板和回调函数两种形式。 position: 'top' | 'bottom', //提示框位置 alwaysShowContent: true | false //是否总是显示提示框 }, xAxis：{ // X轴 show: true | false, position: 'top' | 'bottom', type: 'value' | 'category' | 'time' | 'log', //X轴类型 数值轴 | 类目轴 | 时间轴 | 对数轴 name: 'xxx', //X轴名称 nameLocation: 'start' | 'middle/center' | 'end', //X轴名称位置 axisLine: { show: true, lineStyle: { //X轴的样式 color: &quot;rgba(220, 43, 43, 1)&quot; width: 1 } }, axisTick: { //X轴刻度相关设置 show: true, alignWithLabel:true, //刻度线和标签对齐 inside: true, //刻度是否朝内 length: 5, //刻度的长度 lineStyle: { //刻度线相关设置 width: 0.
         </div>
-        <a href="https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/"
+        <a href="https://lwbing.top/posts/echarts-%E7%9A%84%E4%BD%BF%E7%94%A8/"
           class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
         
       </div>
@@ -149,17 +149,18 @@ import React from &quot;react&quot;; export default function App() { return ( &l
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/react-%E7%B1%BB%E7%BB%84%E4%BB%B6/" class="color-inherit dim link">
-            React 类组件
+          <a href="https://lwbing.top/posts/ts-%E4%B8%AD-svg-%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            TS 中 SVG 的使用
           </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
-创建方式 ES5（过时的） 由于 ES5 不支持 class，才用这种方式
-import React from 'react' const A=React.createClass({ render(){ return ( &lt;div&gt;hi&lt;/div&gt; ) } }) export default A  ES6方式（推荐使用） import React from 'react' Class B extends React.Component{ constructor(props){ super(); } render(){ return ( &lt;div&gt;hi&lt;/div&gt; ) } } export default B  props的使用  接受外部数据，可以直接读取属性 this.props.xxx，不能改写 props ,应该由数据的主人，也就是外部去修改 接受外部函数，可以在恰当的时机调用该函数，该函数一般是父组件的函数
-import React from &quot;react&quot;; export default function App() { return ( &lt;div className=&quot;App&quot;&gt; &lt;Son say=&quot;我是儿子&quot;/&gt; &lt;/div&gt; ); } class Son extends React.
+          首先，在 shims-vue.d.ts 文件中输入
+declare module &quot;*.svg&quot; { const content: string export default content }  可以解决引入的路径问题
+在终端输入 yarn add svg-sprite-loader -D,安装 svg-loader 后进入 vue.config.js文件进行配置
+const path = require(id:'patg') module.export={ lintOnSave: false. chainWebpack: config=&gt;{ const dir = path.resolve(_dirname,'src/assets/icons') //文件目录 config.module .rule('svg-sprite') //规则 .test(/\.svg$/) // 匹配以 .svg 结尾 .include.add(dir).end //包含 icons 目录 .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract:false}).end() // 使用 svg-loader config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'),[{plainSprite: true}]) // 添加插件 cofig.module.rule('svg').exclude.add(dir) //其他 svg loader 排除 icons 目录 } }  在页面中使用
+import home from @/assets/icons/home.
         </div>
-        <a href="https://lwbing.top/posts/react-%E7%B1%BB%E7%BB%84%E4%BB%B6/"
+        <a href="https://lwbing.top/posts/ts-%E4%B8%AD-svg-%E7%9A%84%E4%BD%BF%E7%94%A8/"
           class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
         
       </div>
@@ -176,19 +177,19 @@ import React from &quot;react&quot;; export default function App() { return ( &l
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://lwbing.top/posts/react-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="color-inherit dim link">
-            React 的生命周期
+          <a href="https://lwbing.top/posts/react-hooks%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            React Hooks的使用
           </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          什么是生命周期？生命周期就是一个对象的生老病死。
-Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
-constructor  初始化 props 初始化 state，但此时不能调用 setState 用来写 bind this
-constructor(props){ super(props); this.state = { n: 0 } this.onClick = this.onClick.bind(this) } 一般不这样写 onClick=()=&gt;{} constructor(){/*其他代码*/}    在某些情况下可以省略
- shouldComponentUpdate  返回 true 表示不阻止 UI 更新 返回 false 表示阻止 UI 更新
-import React from &quot;react&quot;; class App extends React.Component{ constructor(props){ super(props); this.state={ n:1 } } Click=()=&gt;{ this.setState(state=&gt;({n:state.n+1})) this.setState(state=&gt;({n:state.n-1})) } shouldComponentUpdate(oldProps,newProps){ if(newProps.n===this.state.n){ return false }else{ return true } } render(){ console.
+          useState 使用状态 const [n,setN] = React.useState(0) const [user,setUser] = React.useState({name:'Jack'})  注意事项  不可局部更新
+如果 state 是一个对象，setState 不会自动合并属性
+import React, { useState } from &quot;react&quot;; import &quot;./styles.css&quot;; export default function App() { const [user,setUser] = useState({name:'Jack',age:18}) const Click = ()=&gt;{ setUser({ name:'Tom' }) } return ( &lt;div className=&quot;App&quot;&gt; &lt;h1&gt;{user.name}&lt;/h1&gt; &lt;h2&gt;{user.age}&lt;/h2&gt; &lt;button onClick={Click}&gt;Click&lt;/button&gt; &lt;/div&gt; ); }  效果 可以用 ... 操作符解决
+ 地址要改变
+setState(obj) 如果 obj 地址不变，React 就会认为数据没有变化
+import React, { useState } from &quot;react&quot;; import &quot;.
         </div>
-        <a href="https://lwbing.top/posts/react-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"
+        <a href="https://lwbing.top/posts/react-hooks%E7%9A%84%E4%BD%BF%E7%94%A8/"
           class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
         
       </div>
@@ -205,26 +206,26 @@ import React from &quot;react&quot;; class App extends React.Component{ construc
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/react%E7%9A%84%E5%88%9D%E8%AF%86/" class="link black dim">
-              React 的初识
+            <a href="https://lwbing.top/posts/react-usememo%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+              React useMemo的使用
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/vue%E5%8A%A8%E7%94%BB/" class="link black dim">
-              Vue 动画
+            <a href="https://lwbing.top/posts/react-%E7%B1%BB%E7%BB%84%E4%BB%B6/" class="link black dim">
+              React 类组件
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
-              sync 修饰符
+            <a href="https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/" class="link black dim">
+              React 函数组件
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
-              Vue中的模板指令语法与修饰符
+            <a href="https://lwbing.top/posts/react-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="link black dim">
+              React 的生命周期
             </a>
           </h2>
         

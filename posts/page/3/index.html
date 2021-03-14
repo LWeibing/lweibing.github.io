@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwbing.top/posts/" />
 
-<meta property="og:updated_time" content="2020-09-22T23:19:44+08:00" />
+<meta property="og:updated_time" content="2020-11-04T21:34:54+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -92,6 +92,81 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90-mvc/" class="link black dim">
+        浅析 MVC
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      MVC MVC 全名是Model View Controller是一种架构设计模式,将数据,界面的显示分离开来,当用户更新页面时,不需要重新编写全部代码.相当于把适用于一些任务的&rdquo;工具&rdquo;放在一起,当遇到类似的任务时,就可以用这个&rdquo;工具包&rdquo;,不用再去一个个的寻找,也可以说 MVC 是万金油,适用于大部分情况.
+MVC每个模块可以分为三个对象:
+ M - Model (数据模型) 负责操作所有数据
+const m = { data: { n: parseInt(localStorage.getItem('n')) }, update(data){ Object.assign(m.data,data) eventBar.trigger('m-updated') } }  V - View (视图) 负责所有 UI 界面
+const c = { init(container) { v.init(container) v.render(m.data.n) c.bindEvent() eventBar.on('m-updated',()=&gt;{ v.render(m.data.n) }) }, event: { &quot;click #add&quot;: &quot;add&quot;, &quot;click #sub&quot;: &quot;sub&quot;, &quot;click #mul&quot;: &quot;mul&quot;, &quot;click #div&quot;: &quot;div&quot; }, add() { m.update(m.data.n += 1) }, sub() { m.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/dom%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="link black dim">
+        DOM事件机制和事件委托
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      DOM 事件机制 有三个 DIV 元素, #grandfather 包含 #father 包含 #child,并给三个 DIV 绑定一个点击事件,输出一段文字,当我们点击最内层的文字,谁的文字会最先打出来呢?
+&lt;div id=&quot;grandfather&quot;&gt; &lt;div id=&quot;father&quot;&gt; &lt;div id=&quot;child&quot;&gt;请点击我&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;script&gt; let grandfather = document.querySelector('#grandfather'); let father = document.querySelector('#father'); let child = document.querySelector('#child'); grandfather.onclick=()=&gt;{ console.log('grandfather 被点击') } father.onclick=()=&gt;{ console.log('father 被点击') } child.onclick=()=&gt;{ console.log('child 被点击') } &lt;/script&gt;  IE5认为先执行 #child 中的函数的这种 从内岛外 的顺序,叫做事件冒泡
+网景认为先执行 #grandfather 中的函数的这种 从外到内 的顺序,叫做事件捕获
+于是 W3C发布标准: 首先 按照 从外到内 的顺序找监听函数,然后 按照 从内到外 的顺序找监听函数,如果找到监听函数就调用,并提供事件信息,没有就跳过
+// 事件绑定 API IE5: child.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="link black dim">
+        浅析jQuery的设计思想
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      目录  什么是 jQuery jQuery 的实现 获取元素 链式操作 创建元素 移动元素 删改元素  什么是 jQuery jQuery 是目前最长寿,也是目前世界使用最广泛的 javaScript 函数库,虽然jQuery现在已经过时,但很多大型的网站都还在使用着它.
+jQuery 的实现 前面说了 jQuery 是 javaScript 函数库,那么 jQuery 是怎么由 javaScript 构建出来的呢?
+封装 简单的来说,封装 就是把一些零散的代码组成一个组件.就像是电脑主机,CPU,内存条,硬盘,主板,显卡等零散的零件,用机箱将他们封装在一起,用户使用的时候,并不用知道里面是怎样摆放,是怎样运作的.
+接口 被封装的东西,需要暴露一些功能给外部,让用户可以通过这些功能与被封装的东西进行交互与通讯,这些功能我们就叫做接口.类似于电脑主机中的 USB 接口,耳机孔,电源插口等等.
+所以,jQuery 是由 javaScript 中许许多多的函数,语句等封装起来的一个库,而 jQuery 文档中提供的用法,我们称之为 API .
+接下来,我们来看看 jQuery 如何使用
+获取元素 我们要修改哪个元素,就在哪个元素上对其使用 jQuery,因此,我们必须先找到这个元素.
+$(document); //可以获取整个文档 $(&quot;#test&quot;); //可以获取 ID 为 test 的元素 $(&quot;.red&quot;); //可以获取整个页面 class 为 red 的元素 $(&quot;div.red&quot;); //可以获取 class 为 red 的div元素 $(&quot;#test&quot;).
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+        JS 函数的执行时机
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      执行时机 时机不同,得到的结果也是不同的,看下面的例子:
+// 例 1 let a = 1 function fn(){ console.log(a) } a = 2 fn() // 2  // 例 2 let a = 1 function fn(){ console.log(a) } fn() // 1 a = 2  例 1和例 2,代码其实都差不多,不同的只是 fn 的调用时机不同,例 1在代码a=2之后调用fn,a这个时候已经被重新赋值了,所以得出的结果为2;例 2调用fn,结果直接输出为1,后面a=2,对其完全没有影响
+现在我们知道了时机对函数的影响,我们继续来看下面这个例子:
+// 例 3 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  你以为输出的结果会是 0,1,2,3,4,5 ?仿佛并不是这样,结果是 6,6,6,6,6,6,这是为什么呢?
+这里我们就要说一下 setTimeout ,这个API是指定一个定时器,该定时器在到时候执行里面的函数或代码
+    </div>
+  </div>
+</div></div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -226,78 +301,6 @@ inline元素从左至右,位置不够时,可能会将元素分为两块宽度由
   </div>
 </div></div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
-        HTML常用标签
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      html 中有大约110个标签,那是不是这么多的标签我们都需要将其强记下来呢?不,我们只需要记住一些常用的 html 标签,那些不常用的标签,当我们碰到了要使用的情况,再去 MDN 查询即可.话不多说,一起来看看吧
-HTML常用标签 a 标签 table 标签 img 标签 from 标签 input 标签 其他输入标签 a 标签 a 标签的作用  跳转到外部页面 跳转到内部锚点 跳转到邮箱或电话等  a 标签的属性  herf target download rel = noopener  1. herf 的取值 网址
-在 a 标签的 href 里面,我们可以入以 http//: , https//: 和 //为头的网址,一般我们用 // 为主,因为它的兼容性最好.
- &lt;a href=&quot;//baidu.com&quot;&gt;百度&lt;/a&gt;  路径
-可以在 href 属性中填入路径.
-&lt;a href=&quot;/a/b/c.html&quot;&gt;c.html&lt;/a&gt; &lt;a href=&quot;a/b/c.html&quot;&gt;c.html&lt;/a&gt; &lt;a href=&quot;index.html&quot;&gt;index.html&lt;/a&gt; &lt;a href=&quot;/index.html&quot;&gt;index.html&lt;/a&gt;  注意,如果你写链接的最前面有 / 的时候,在预览时需要在终端用 http-server -c-1 或者 percel xxx.
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
-        HTML入门笔记1
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      万维网是什么  WWW = URL + HTTP + HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
-万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&rdquo;网上冲浪&rdquo;第一人.
-HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
-HTML起手式 Emmet感叹号
-&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;  章节标签 表示文章的层级
-   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        如何搭建个人博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      使用Hugo+GitHub搭建个人博客 步骤1:安装 Hugo 可以去 Hugo releases 页面下载合适的 Hugo 安装,安装完成后测试Hugo是否安装成功,在 Cmder 中执行下面代码:
- hugo version  步骤2:建立新的网站  hugo new site quickstart  进入一个合适的目录,在 Cmder 中执行上面的代码,将 quickstart 替换为 username.github.io-creator,其中 username 为你在 GitHub 上全小写的用户名.
-步骤3:创建主题 进入新建好的网站,输入下面的代码,可进入 Hugo Themes 页面选择喜欢的主题,并替换第二条代码.
-git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke  然后将主题添加至配置 config.toml 中:
- echo 'theme = &quot;你所下载的主题名称&quot;' &gt;&gt; config.toml  没有下载 git 的用户,可自行安装 git ,或者进入主题页面直接下载主题压缩包,解压后改名为对应的主题名称,并移至 &ldquo; themes\ &ldquo; 目录下
-步骤4:编写第一篇博客 可输入下面的代码,创建一个新的文章
- hugo new posts/第一篇博客.
-    </div>
-  </div>
-</div></div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        第一篇博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      第一篇博客 我的第一篇博客
-    </div>
-  </div>
-</div></div>
-      
     </section>
 
 <ul class="pagination">
@@ -345,12 +348,23 @@ git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git th
     <li class="page-item active"><a class="page-link" href="/posts/page/3/">3</a></li>
     
     
-    <li class="page-item disabled">
-    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
