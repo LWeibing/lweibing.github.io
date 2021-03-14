@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Clown博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Clown博客" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Clown博客" />
+      
+    
+    
+    <meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lwbing.top/posts/" />
+
+<meta property="og:updated_time" content="2020-09-22T23:19:44+08:00" />
+<meta itemprop="name" content="Posts">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+<header>
+  <div class="pb3-m pb6-l bg-black">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lwbing.top/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Clown博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+    <div class="tc-l pv3 ph3 ph4-ns">
+      <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+        Posts
+      </h1>
+      
+    </div>
+  </div>
+</header>
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+        JS 对象基本用法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      对象 object js中唯一一种复杂类型
+ 无序的数据集合 键值对的集合  声明方式 let obj = {'name':'Tom','age':18} let obj = new Object({'name':'Tom'})  注意:
+ 键名是字符串,不是标识符,可以包含任意字符 引号可以省略,省略之后就只能写标识符 就算省略了引号,键名还是字符串  属性名 所有的属性名会自动变成字符串
+Object.keys(obj) //可以得到 obj 的所有的 key  变量做属性名 let p1 = 'name' let obj = { [p1]: 'Tom' }  这样写的话, obj 的属性名为 'name'
+细节:
+ 不加 [] 的属性名会自动变为字符串 加了 [] 的属性名会被当做变量求值  隐藏属性 JS中每一个对象都有一个隐藏属性proto,这个属性存储着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,也就是说,隐藏属性proto中存储着原型的地址
+原型  每个对象都有原型
+原型里存着对象的共有属性,比如obj的原型就是一个对象,obj.proto存着这个对象的地址,这个对象里面有toString / constructor / valueOf 等属性
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
+        JS 语法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      表达式与语句 表达式 表达式是由运算元和运算符(可选)构成，并产生运算结果的语法结构
+ 1 + 2的表达式的值是为3 add(1,2)表达式值为函数返回值 console.log表达式返回的值为函数本身  语句 由一个或多个关键字和表达式构成
+ var a = 1 是一个语句  二者的区别  表达式一般都有值,语句可能有也可能没有 语句一般会改变环境(声明,赋值) 上面两句话并不是绝对的  标识符 是用来识别具体对象的一个名称
+规则  可以是Unicode字母,$,数字,_和中文 数字不能作为标识符的首个字符  变量名是标识符  var _ = 1 var $ = 2 var ___ = 6  注释 不好的注释  把代码翻译为中文 过时的注释 发泄不满的注释  好的注释  踩坑注释 遇到的问题,解决的方法  if语句 语法 if(表达式){ 语句1 }else{ 语句2 }  在{}中只有一句语句的时候可以省略,但不建议省略
+变态情况  表达式里可以非常变态,如 a = 1 语句1和语句2里可以非常变态,如嵌套 if else 缩进可以非常变态,如下
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/javascript%E6%A6%82%E8%BF%B0/" class="link black dim">
+        JavaScript的概述
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       JavaScript的历史 JavaScript的诞生 JavaScript之父,布莱登在1995年进入网景公司,公司要求为其浏览器添加一个脚本功能,而且还必须要蹭Java的热度,于JavaScript功能被开发了出来.由于布莱登只花了十天的时间设计了JS的最初版本,所以当时的JavaScript只是一个不起眼的小功能,而且有很多bug.
+1996年8月,IE3发布,并支持JScript(微软实现的JS),于是网景在三个月后向ECMA提交语言标准,但是由于版权问题,不叫JavaScript,而改为ECMAScript.
+JavaScript的发展  1997年6月,第一版的ECMAScript发布 1999年12月,第三版ECMAScript发布,这个版本是目前世界上使用最广泛的 JS 版本. 2004年4月,谷歌发布Gmail在线网页,让当时认为网页只能看图片和新闻的人们眼前一亮. 2005年,谷歌运用的这种技术被称之为AJAX,前端技术从此正式出现. 2006年,JQuery发布,在未来的十年里,JQuery一直大放异彩,直到IE没落,才没有那么火,但至今依旧有很多网站在使用着他 2009年12月,ECMAScript第五版发布,增加了一些功能.Ryan基于Chrome的JS引擎V8,创建了Node.js 2010年,Isaac基于Node.js写出了npm,前端工程师就可以开始在浏览器之外执行JS,Node.js迅速风靡. 2011年,智能手机的发布和Nokia的没落,前端工程师迎来解放前夕. 2015年6月,ECMAScript第六版发布,新浏览器都支持这个版本,之后每年发布一个版本,并以该年份命名. 2016年,Chrome占据全球份额的62%,超过了IE,同年淘宝天猫宣布不再支持IE6,IE7和IE8,让中国摆脱了IE的支配,前端开始急速发展. 在这期间,JavaScript有很多技术推出,像gulp,grunt,yeoman,reqirejs,webpack,Angular,React,Vue等,虽然至今已有很多没落,但也有很多一直在进步.  JavaScript的缺陷  不适合大型开发 非常小的标准库 null和undefined 全局变量难以控制 自动插入行尾分号 加号运算符 NaN 数组和对象的区分 == 和 === 基本类型的包装对象  
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
+        浅析 URL
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      URL的组成 URL也叫统一资源定位符,由 协议 + 域名 + 端口号 + 路径 + 查询参数 + 锚点 组成  协议
+HTTP(基于TPC和IP两个协议)协议,还有FTP协议等等。
+ 域名
+ 域名是对IP的别称 一个域名可以对应不同的IP,这叫均衡负载,防止一台机器扛不住 一个IP可以对应不同的域名,这叫共享主机,资金不够的开发者会这么做.  端口号
+一台机器可以提供很多服务,每个服务的号码就是端口
+ HTTP 服务最好使用 80端口 HTTPS 服务最好使用 443端口 FTP 服务最好使用 21端口 一共有65535个端口(基本够用) 0-1023号端口是留给系统使用的,你只有拥有了管理权限,才能使用这1024个端口 其他端口都可以给普通用户使用 端口若被占用,则只能换一个端口  路径
+是服务器上的一个目录或地址,以这个地址访问不同的页面,不是URL必须的部分
+ 查询参数
+在问号后面拼接的一串字符,可以查询相关信息,可以在同一个页面,查看不同的内容
+ 锚点
+定位页面的位置
+ 锚点看起来有中文,实际上不支持中文 锚点无法在Network上看到的,因为锚点不会传给服务器   DNS Domain Name System 域名系统 作用:可以将域名解析为IP,浏览器通过该IP的80/443端口发送请求,访问页面.
+nslookup 可以查询IP地址和DNS记录,查看域名解析是否正常.
+IP 当你买了一个路由器,并连接了租用的宽带,你就有了一个属于自己的IP  路由器没有固定的外网IP,如果你重启了路由器,你有可能会被重新分配一个外网IP 路由器会在你家里创建一个内网,内网中的设备使用内网IP  路由器的功能  内网设备可以相互访问,不能直接访问外网,必须经过路由器中转 外网设备可以相互访问,无法直接访问你的内网,外网设备想把内容发送到内网,必须经过路由器 因此路由器也叫网关  特殊的IP  127.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+        CSS 知识总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      文档流 盒模型 CSS 布局 CSS 定位 CSS 动画 层叠上下文 浏览器渲染原理 文档流 流动方向  inline
+inline元素从左至右,位置不够时,可能会将元素分为两块宽度由内部的inline元素的和决定不能指定宽度高度由line-height间接决定,与height无关
+ block
+宽度默认自动计算,可以用width指定高度由内部文档流元素决定,可以设置height决定
+ inline-block
+从左至右,位置不够时,不会将元素分为两块结合两者的特点,可以用width指定宽度,也可以用height设置高度
+  注意:
+ 现在不再区分内联元素和块级元素,而是有display决定. 千万不要在 inline元素中加block元素.  overflow 当内容的宽度或者高度大于容器的宽度或高度时,会产生溢出现象.
+可用overflow属性设置:
+ visible:默认值,内容不会被改变,显示在容器外部 hidden:内容会被裁剪,适应容器的大小,没有滚动条 scroll:内容会被裁剪,适应容器大小,显示滚动条(无论内容是否超出容器,都会显示滚动条) auto:内容会被裁剪,适应容器大小,显示滚动条(判断内容是否超出容器,超出容器就显示滚动条,否则不显示)  脱离文档流 当元素使用float和position:absolute | fixed属性,都会使元素脱离文档流,脱离文档流后,父元素将不再计算其高度
+盒模型 CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
+        CSS盒模型
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      CSS中有两种盒子模型,一种是W3C标准的盒子模型(content-box),另一种是IE标准的(怪异)盒子模型(border-box).
+标准盒子模型与怪异盒子模型的区别 只有当标准盒子模型与怪异盒子模型同时设置了宽度(width),边框(border)和内边距(padding),才能够用肉眼看到明显的差别
+标准盒子模型 (content-box): 标准盒子模型的 width 和 height 指的是内容 (content) 的宽度和高度,不包括内边距(padding),边框(border)和外边距(margin).
+标准盒子模型的的大小 = width(content) + padding + border + margin
+怪异盒子模型(border-box): 怪异盒子模型的 width 和 height 指的是内容 (content),内边距(padding)和边框(border) ,不包括外边距边距
+怪异盒子模型的的大小 = width(content + padding + border) + margin
+如何使用盒子模型 我们可以通过 box-sizing 来设置使用什么盒子模型.
+ content-box: 默认值,即是标准盒子模型.
+ border-box: 怪异盒子模型,程序员更多的使用这个,可以更好的设置一个元素的宽高.
+  使用案例 HTML  &lt;div class=&quot;content-box&quot;&gt;&lt;/div&gt; &lt;div class=&quot;border-box&quot;&gt;&lt;/div&gt;  CSS div { width: 200px; height: 100px; border: 5px solid red; padding: 30px; margin: 30px; } .
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
+        HTML常用标签
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      html 中有大约110个标签,那是不是这么多的标签我们都需要将其强记下来呢?不,我们只需要记住一些常用的 html 标签,那些不常用的标签,当我们碰到了要使用的情况,再去 MDN 查询即可.话不多说,一起来看看吧
+HTML常用标签 a 标签 table 标签 img 标签 from 标签 input 标签 其他输入标签 a 标签 a 标签的作用  跳转到外部页面 跳转到内部锚点 跳转到邮箱或电话等  a 标签的属性  herf target download rel = noopener  1. herf 的取值 网址
+在 a 标签的 href 里面,我们可以入以 http//: , https//: 和 //为头的网址,一般我们用 // 为主,因为它的兼容性最好.
+ &lt;a href=&quot;//baidu.com&quot;&gt;百度&lt;/a&gt;  路径
+可以在 href 属性中填入路径.
+&lt;a href=&quot;/a/b/c.html&quot;&gt;c.html&lt;/a&gt; &lt;a href=&quot;a/b/c.html&quot;&gt;c.html&lt;/a&gt; &lt;a href=&quot;index.html&quot;&gt;index.html&lt;/a&gt; &lt;a href=&quot;/index.html&quot;&gt;index.html&lt;/a&gt;  注意,如果你写链接的最前面有 / 的时候,在预览时需要在终端用 http-server -c-1 或者 percel xxx.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
+        HTML入门笔记1
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      万维网是什么  WWW = URL + HTTP + HTML  WWW( World Wide Web ),中文直译为像世界那么大的网,就是万维网.
+万维网的诞生 在1990年,Tim Berners-Lee为了让每个人输入网址就能看到网页,但是当时并没有网址,于是发明了URL,有了网址没有页面就没有什么可以看的,于是就发明了HTML,最后为了完善这个系统化,就有了HTTP的诞生,以此为基础写了第一个浏览器和第一个服务器,并使用浏览器问了服务器,于是Tim Berners-Lee成为了&rdquo;网上冲浪&rdquo;第一人.
+HTML历史 HTML诞生于Tim Berners-Lee的一篇叫做 HTML Tags 的文章,最原始的HTML非常简陋,只有18个标签,经过长时间的迭代,如今的标签大约已有110个.
+HTML起手式 Emmet感叹号
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;  章节标签 表示文章的层级
+   标签 作用 标签 作用     h1~h6 文章各级标题 footer 脚部   section 章节 main 主要内容   article 文章  旁支内容   p 段落 div 划分区域   header 头部      全局属性 所有标签都有的属性
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
+        如何搭建个人博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      使用Hugo+GitHub搭建个人博客 步骤1:安装 Hugo 可以去 Hugo releases 页面下载合适的 Hugo 安装,安装完成后测试Hugo是否安装成功,在 Cmder 中执行下面代码:
+ hugo version  步骤2:建立新的网站  hugo new site quickstart  进入一个合适的目录,在 Cmder 中执行上面的代码,将 quickstart 替换为 username.github.io-creator,其中 username 为你在 GitHub 上全小写的用户名.
+步骤3:创建主题 进入新建好的网站,输入下面的代码,可进入 Hugo Themes 页面选择喜欢的主题,并替换第二条代码.
+git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke  然后将主题添加至配置 config.toml 中:
+ echo 'theme = &quot;你所下载的主题名称&quot;' &gt;&gt; config.toml  没有下载 git 的用户,可自行安装 git ,或者进入主题页面直接下载主题压缩包,解压后改名为对应的主题名称,并移至 &ldquo; themes\ &ldquo; 目录下
+步骤4:编写第一篇博客 可输入下面的代码,创建一个新的文章
+ hugo new posts/第一篇博客.
+    </div>
+  </div>
+</div></div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://lwbing.top/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="link black dim">
+        第一篇博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      第一篇博客 我的第一篇博客
+    </div>
+  </div>
+</div></div>
+      
+    </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/page/3/">3</a></li>
+    
+    
+    <li class="page-item disabled">
+    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+</article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lwbing.top/" >
+    &copy;  Clown博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

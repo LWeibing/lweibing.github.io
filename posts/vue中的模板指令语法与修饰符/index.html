@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vue中的模板指令语法与修饰符 | Clown博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Vue中的模板指令语法与修饰符" />
+<meta property="og:description" content="指令 Vue中的指令就是指 v- 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性
+表达式  {{ obj.a }} 表达式 {{ n &#43; 1 }} 可以添加任何参数运算 {{ fn(n) }} 可以调用任何函数 当值为 undefined 或者 null 时，则不显示 也可以使用 &lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt; 的写法来展示  HTML 内容 v-html 可以使得表达式中的所含的标签生效
+&lt;div id=&quot;app&quot;&gt; &lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt; &lt;/div&gt; new Vue({ el: &#39;#app&#39;, data:{ x:&lt;strong&gt;hi&lt;/strong&gt; } })  显示值为：hi
+输出{{ n }} 如果我们要输出{{ n }},直接写入模板的话，则会被模板编译为 n 的值,用v-pre可以不被模板进行编译
+&lt;div v-pre&gt;{{ n }}&lt;/div&gt; 显示值为：{{ n }}  绑定属性 使用 v-bind 来进行属性的绑定，v-bind 可以简写为 :" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/" />
+<meta property="article:published_time" content="2020-08-09T23:07:34+08:00" />
+<meta property="article:modified_time" content="2020-08-09T23:07:34+08:00" />
+<meta itemprop="name" content="Vue中的模板指令语法与修饰符">
+<meta itemprop="description" content="指令 Vue中的指令就是指 v- 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性
+表达式  {{ obj.a }} 表达式 {{ n &#43; 1 }} 可以添加任何参数运算 {{ fn(n) }} 可以调用任何函数 当值为 undefined 或者 null 时，则不显示 也可以使用 &lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt; 的写法来展示  HTML 内容 v-html 可以使得表达式中的所含的标签生效
+&lt;div id=&quot;app&quot;&gt; &lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt; &lt;/div&gt; new Vue({ el: &#39;#app&#39;, data:{ x:&lt;strong&gt;hi&lt;/strong&gt; } })  显示值为：hi
+输出{{ n }} 如果我们要输出{{ n }},直接写入模板的话，则会被模板编译为 n 的值,用v-pre可以不被模板进行编译
+&lt;div v-pre&gt;{{ n }}&lt;/div&gt; 显示值为：{{ n }}  绑定属性 使用 v-bind 来进行属性的绑定，v-bind 可以简写为 :">
+
+
+<meta itemprop="datePublished" content="2020-08-09T23:07:34&#43;08:00" />
+<meta itemprop="dateModified" content="2020-08-09T23:07:34&#43;08:00" />
+<meta itemprop="wordCount" content="302">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue中的模板指令语法与修饰符"/>
+<meta name="twitter:description" content="指令 Vue中的指令就是指 v- 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性
+表达式  {{ obj.a }} 表达式 {{ n &#43; 1 }} 可以添加任何参数运算 {{ fn(n) }} 可以调用任何函数 当值为 undefined 或者 null 时，则不显示 也可以使用 &lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt; 的写法来展示  HTML 内容 v-html 可以使得表达式中的所含的标签生效
+&lt;div id=&quot;app&quot;&gt; &lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt; &lt;/div&gt; new Vue({ el: &#39;#app&#39;, data:{ x:&lt;strong&gt;hi&lt;/strong&gt; } })  显示值为：hi
+输出{{ n }} 如果我们要输出{{ n }},直接写入模板的话，则会被模板编译为 n 的值,用v-pre可以不被模板进行编译
+&lt;div v-pre&gt;{{ n }}&lt;/div&gt; 显示值为：{{ n }}  绑定属性 使用 v-bind 来进行属性的绑定，v-bind 可以简写为 :"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+<header>
+  <div class="bg-black">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lwbing.top/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Clown博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+  </div>
+</header>
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/&amp;text=Vue%e4%b8%ad%e7%9a%84%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4%e8%af%ad%e6%b3%95%e4%b8%8e%e4%bf%ae%e9%a5%b0%e7%ac%a6" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/&amp;title=Vue%e4%b8%ad%e7%9a%84%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4%e8%af%ad%e6%b3%95%e4%b8%8e%e4%bf%ae%e9%a5%b0%e7%ac%a6" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">Vue中的模板指令语法与修饰符</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-08-09T23:07:34&#43;08:00">August 9, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="指令">指令</h2>
+
+<p>Vue中的指令就是指 <code>v-</code> 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性</p>
+
+<h4 id="表达式">表达式</h4>
+
+<ul>
+<li>{{ obj.a }} 表达式</li>
+<li>{{ n + 1 }} 可以添加任何参数运算</li>
+<li>{{ fn(n) }} 可以调用任何函数</li>
+<li>当值为 <code>undefined</code> 或者 <code>null</code> 时，则不显示</li>
+<li>也可以使用  <code>&lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt;</code> 的写法来展示</li>
+</ul>
+
+<h4 id="html-内容">HTML 内容</h4>
+
+<p><code>v-html</code> 可以使得表达式中的所含的标签生效</p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+	&lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+new Vue({
+	el: '#app',
+	data:{
+		x:&lt;strong&gt;hi&lt;/strong&gt;
+	}
+})
+</code></pre>
+
+<p>显示值为：<strong>hi</strong></p>
+
+<h4 id="输出-n">输出{{ n }}</h4>
+
+<p>如果我们要输出<code>{{ n }}</code>,直接写入模板的话，则会被模板编译为 <code>n</code> 的值,用<code>v-pre</code>可以不被模板进行编译</p>
+
+<pre><code>&lt;div v-pre&gt;{{ n }}&lt;/div&gt; 显示值为：{{ n }}
+</code></pre>
+
+<h4 id="绑定属性">绑定属性</h4>
+
+<p>使用 <code>v-bind</code> 来进行属性的绑定，<code>v-bind</code> 可以简写为 <code>:</code></p>
+
+<ul>
+<li><p>绑定 <code>src</code></p>
+
+<pre><code>&lt;img v-bind:src=&quot;x&quot;/&gt;
+&lt;img :src=&quot;x&quot;/&gt;
+</code></pre>
+
+<ul>
+<li><p>绑定对象</p>
+
+<pre><code>&lt;div :style=&quot;{border: '1px solid red', height:100}&quot;&gt;&lt;/div&gt;
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h4 id="绑定事件">绑定事件</h4>
+
+<p>使用 <code>v-on</code> 来进行事件的绑定，<code>v-on</code> 可以简写为 <code>@</code></p>
+
+<pre><code>&lt;button v-on:click=&quot;add&quot;&gt;+1&lt;/button&gt;  // 点击之后运行 add()
+&lt;button @click=&quot;fn(1)&quot;&gt;fn&lt;/button&gt;	// 点击之后运行 fn(1)
+&lt;button @click=&quot;n+=1&quot;&gt;+1&lt;/button&gt; // 点击之后运行 n+1
+</code></pre>
+
+<h4 id="条件判断">条件判断</h4>
+
+<p>使用 <code>v-if</code> 和 <code>v-else</code> 可以实现条件判断，如果是多重条件可以使用户<code>v-else-if</code></p>
+
+<pre><code>&lt;div v-if=&quot;x&gt;0&quot;&gt;x&gt;0&lt;/div&gt;
+&lt;div v-else-if=&quot;x=0&quot;&gt;x=0&lt;/div&gt;
+&lt;div v-else&gt;x&lt;0&lt;/div&gt;
+</code></pre>
+
+<p>只有满足条件的 div 才会显示，否则隐藏</p>
+
+<h4 id="循环">循环</h4>
+
+<p>使用 <code>v-for</code> 可以实现循环数组或者对象，使用 <code>v-for</code> 需要在后面添加 <code>:key=&quot;xxx&quot;</code>，否则会引起浏览器报错</p>
+
+<pre><code>&lt;ul&gt;
+	&lt;li v-for=&quot;(u,index) in arr&quot; :key=&quot;index&quot;&gt;
+		index:{{index}}  name:{{u.name}}
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+	&lt;li v-for=&quot;(value, name) in obj&quot; :key=&quot;name&quot;&gt;
+		key:{{name}} value:{{name}}
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+</code></pre>
+
+<h4 id="显示与隐藏">显示与隐藏</h4>
+
+<p>使用 <code>v-show</code> 可以实现显示与隐藏</p>
+
+<pre><code>&lt;div v-show=&quot;n%2===0&quot;&gt; n是偶数 &lt;/div&gt;
+// 近似等于
+&lt;div :style=&quot;{display:n%2===0?'block':'none'}&quot;&gt; n是偶数 &lt;/div&gt;
+</code></pre>
+
+<h4 id="数据双向绑定">数据双向绑定</h4>
+
+<p><code>v-modle</code>一般用于<code>input</code>、<code>select</code>、<code>textarea</code>等表单元素上，可以实现无论是<code>data</code>还是渲染的<code>DOM</code>元素的值或者内容发生变化，另一方也作出相应改变，使之值或者内容一致</p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+	&lt;p&gt;{{ content }}&lt;/p&gt;
+    &lt;hr /&gt;
+    &lt;input type=&quot;text&quot; v-modle=&quot;content&quot; /&gt;
+&lt;/div&gt;
+
+new Vue({
+	el: '#app',
+	data:{
+		content:hi
+	}
+})
+</code></pre>
+
+<h4 id="v-cloak">v-cloak</h4>
+
+<p>网络较慢时，网页加载Vue.js，所以来不及渲染，导致网页显示源代码，可以使用<code>v-cloak</code>解决</p>
+
+<pre><code>&lt;templated&gt;
+  &lt;div id=&quot;app&quot; v-cloak&gt;
+      {{ context }}
+  &lt;/div&gt;
+&lt;templated&gt;
+
+&lt;script&gt;
+  new Vue({
+      el: '#app',
+      data:{
+          context:hi
+      }
+  })
+&lt;script&gt;
+
+&lt;style&gt;
+	[v-cloak]{
+    	display:none
+    }
+&lt;/stylr&gt;
+</code></pre>
+
+<h4 id="v-once">v-once</h4>
+
+<p>当数据或者内容已经确定，不会再次修改，则可以使用<code>v-once</code></p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+	&lt;p v-once&gt;{{ context }}&lt;/p&gt; // 使用 v-once p标签的内容将不会改变
+    &lt;hr /&gt;
+    &lt;input type=&quot;text&quot; v-modle=&quot;context&quot; /&gt; 
+&lt;/div&gt;
+
+new Vue({
+	el: '#app',
+	data:{
+		context:hi
+	}
+})
+</code></pre>
+
+<h2 id="修饰符">修饰符</h2>
+
+<p>为了更好的实现阻止事件冒泡、阻止默认事件等，Vue中提供的已点开头的修饰符
+* <code>.stop</code> 阻止事件冒泡，阻止事件向上级DOM元素传递
+* <code>.prevent</code> 阻止默认事件，阻止DOM操作引起的自动的动作
+* <code>.capture</code> 捕获冒泡，在有事件冒泡发生时，率先执行有该修饰符的元素
+* <code>.self</code> 将事件绑定到自身，只有自己可以触发，避免事件冒泡
+* <code>.once</code> 事件只触发一次
+* <code>.ctrl</code>、 <code>.alt</code>、 <code>.shift</code>、 <code>.enter 或者 .13</code>等 用户按下键盘中对应的键触发事件
+* <code>left</code>、 <code>right</code>、 <code>middle</code> 用户按下鼠标对应的按键触发事件
+* <code>.sycn</code> 将会写一篇博客进行总结
+* <code>.lazy</code> 默认情况 <code>v-model</code> 在 <code>input</code>事件是同步变化的，该修饰符可以变为在 <code>change</code>时间同步
+* <code>.number</code> 将用户输入的数据绑定为 <code>number</code> 类型
+* <code>.trim</code> 过滤数据首尾的空格</p>
+
+<h2 id="总结">总结</h2>
+
+<ul>
+<li>模板使用 <code>XML</code> 语法</li>
+<li>使用 {{ }} 插入表达式</li>
+<li>使用 <code>v-html</code>、<code>v-text</code>、<code>v-on</code>、<code>v-bind</code> 操作 <code>DOM</code></li>
+<li>使用 <code>v-if</code>、<code>v-for</code> 实现条件判断和循环</li>
+<li>修饰符中重点搞懂 <code>.stop</code>、 <code>.prevent</code>、 <code>.enter</code>、 <code>.sycn</code> 就行了</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lwbing.top/" >
+    &copy;  Clown博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -6,20 +6,191 @@
     <description>Recent content on Clown博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 12 Jun 2020 20:57:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 23:19:44 +0800</lastBuildDate>
     
 	<atom:link href="https://lwbing.top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>React 函数组件</title>
+      <link>https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Tue, 22 Sep 2020 23:19:44 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/react-%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/</guid>
+      <description>什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
+创建方式 1 const Hello = (props) =&amp;gt; { return &amp;lt;div&amp;gt;{props.message}&amp;lt;/div&amp;gt; } 2 const Hello = props =&amp;gt; &amp;lt;div&amp;gt;{props.message}&amp;lt;/div&amp;gt; 3 function Hello(props){ return &amp;lt;div&amp;gt;{props.message}&amp;lt;/div&amp;gt; }  props的使用 直接读取参数 props.xxx
+import React from &amp;quot;react&amp;quot;; export default function App() { return ( &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt; &amp;lt;Son say=&amp;quot;我是儿子&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; ); } const Son =(props)=&amp;gt;{ return( &amp;lt;div&amp;gt; {props.say} &amp;lt;/div&amp;gt; ) }  useState的使用 函数组件中没有类组件中的state,使用 useState Hooks API, 该 API 返回数组，第一项读，第二项写</description>
+    </item>
+    
+    <item>
+      <title>React 类组件</title>
+      <link>https://lwbing.top/posts/react-%E7%B1%BB%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 20 Sep 2020 21:43:19 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/react-%E7%B1%BB%E7%BB%84%E4%BB%B6/</guid>
+      <description>什么是组件 能和其他物品组合起来的物件就叫做组件，在 Vue 中，一个构造选项就可以表示一个组件，而在React 中一个React元素返回的函数就是组件
+创建方式 ES5（过时的） 由于 ES5 不支持 class，才用这种方式
+import React from &#39;react&#39; const A=React.createClass({ render(){ return ( &amp;lt;div&amp;gt;hi&amp;lt;/div&amp;gt; ) } }) export default A  ES6方式（推荐使用） import React from &#39;react&#39; Class B extends React.Component{ constructor(props){ super(); } render(){ return ( &amp;lt;div&amp;gt;hi&amp;lt;/div&amp;gt; ) } } export default B  props的使用  接受外部数据，可以直接读取属性 this.props.xxx，不能改写 props ,应该由数据的主人，也就是外部去修改 接受外部函数，可以在恰当的时机调用该函数，该函数一般是父组件的函数
+import React from &amp;quot;react&amp;quot;; export default function App() { return ( &amp;lt;div className=&amp;quot;App&amp;quot;&amp;gt; &amp;lt;Son say=&amp;quot;我是儿子&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; ); } class Son extends React.</description>
+    </item>
+    
+    <item>
+      <title>React 的生命周期</title>
+      <link>https://lwbing.top/posts/react-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Fri, 11 Sep 2020 23:17:26 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/react-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>什么是生命周期？生命周期就是一个对象的生老病死。
+Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
+constructor  初始化 props 初始化 state，但此时不能调用 setState 用来写 bind this
+constructor(props){ super(props); this.state = { n: 0 } this.onClick = this.onClick.bind(this) } 一般不这样写 onClick=()=&amp;gt;{} constructor(){/*其他代码*/}    在某些情况下可以省略
+ shouldComponentUpdate  返回 true 表示不阻止 UI 更新 返回 false 表示阻止 UI 更新
+import React from &amp;quot;react&amp;quot;; class App extends React.Component{ constructor(props){ super(props); this.state={ n:1 } } Click=()=&amp;gt;{ this.setState(state=&amp;gt;({n:state.n+1})) this.setState(state=&amp;gt;({n:state.n-1})) } shouldComponentUpdate(oldProps,newProps){ if(newProps.n===this.state.n){ return false }else{ return true } } render(){ console.</description>
+    </item>
+    
+    <item>
+      <title>React 的初识</title>
+      <link>https://lwbing.top/posts/react%E7%9A%84%E5%88%9D%E8%AF%86/</link>
+      <pubDate>Mon, 07 Sep 2020 21:55:39 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/react%E7%9A%84%E5%88%9D%E8%AF%86/</guid>
+      <description>React 是一个用于构建用户界面的 JavaScript 库
+引入React CND 引入 进入 react 和 react-dom，选择合适的版本，复制入文件中即可 (不推荐使用)
+ cjs和umd的区别 * cjs 全称是 CommonJS，时 Node.js 支持的模块规范 * umd 是统一模块定义，兼容各种模块规范（含浏览器） * 理论上优先使用 umd，同时支持 Node.js 和浏览器 * 最新的模块规范是使用 import 和 export 关键字
+ webpack 引入 引入 react 和 react-dom 即可（不推荐新手使用，需要配置 webpack）
+yarn add react react-dom import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39;  create-react-app 终端输入 yarn global add create-react-app xxx 即可在当前目录创建一个 xxx 目录文件，安装完成之后进入文件并打开即可（推荐新手使用）
+JSX Vue 中有 vue-loader，React 中有 JSX，你以为是 jsx-loader，其实不然，webpack 中内置 jsx-loader 被 babel-loader 替代了</description>
+    </item>
+    
+    <item>
+      <title>Vue 动画</title>
+      <link>https://lwbing.top/posts/vue%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Sun, 16 Aug 2020 00:13:41 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/vue%E5%8A%A8%E7%94%BB/</guid>
+      <description>CSS 过渡和动画 transition 常用的过渡是 CSS 过渡，使用 fade
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button @click=&amp;quot;Toggle&amp;quot;&amp;gt;Toggle&amp;lt;/button&amp;gt; &amp;lt;transition name=&amp;quot;fade&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;visible&amp;quot;&amp;gt;test&amp;lt;/p&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ visible:false } }, methods:{ Toggle(){ this.visible=!this.visible } } }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .fade-enter-active, .fade-leave-active { transition: opacity .25s; } .fade-enter, .fade-leave-to { opacity: 0; } &amp;lt;/style&amp;gt;  效果
+从上面例子中可以看出来，当用户点击按钮时，Vue 会给目标元素插入一个CSS类名，当动画完成时，会删除这个类名,
+过渡类名  v-enter：进入过渡 v-enter-active：过渡生效时，这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数 v-enter-to：过渡的结束状态 v-leave：离开过渡开始时 v-leave-active：离开过渡生效时，这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数 v-leave-to：离开过渡结束时  animation &amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button @click=&amp;quot;Toggle&amp;quot;&amp;gt;Toggle&amp;lt;/button&amp;gt; &amp;lt;transition name=&amp;quot;fade&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;visible&amp;quot;&amp;gt;test&amp;lt;/p&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return{ visible:false } }, methods:{ Toggle(){ this.</description>
+    </item>
+    
+    <item>
       <title>sync 修饰符</title>
       <link>https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
-      <pubDate>Fri, 12 Jun 2020 20:57:58 +0800</pubDate>
+      <pubDate>Mon, 10 Aug 2020 22:34:27 +0800</pubDate>
       
       <guid>https://lwbing.top/posts/sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
       <description>App.vue
 &amp;lt;template&amp;gt; &amp;lt;div class=&amp;quot;app&amp;quot;&amp;gt; App.vue 我现在有 {{total}} &amp;lt;hr&amp;gt; &amp;lt;Child :money=&amp;quot;total&amp;quot; v-on:update:money=&amp;quot;total = $event&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;quot;./Child.vue&amp;quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .app { border: 3px solid red; padding: 10px; } &amp;lt;/style&amp;gt;  Child.vue
 &amp;lt;template&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt; {{money}} &amp;lt;button @click=&amp;quot;$emit(&#39;update:money&#39;, money-100)&amp;quot;&amp;gt; &amp;lt;span&amp;gt;花钱&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;quot;money&amp;quot;] }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>Vue中的模板指令语法与修饰符</title>
+      <link>https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Sun, 09 Aug 2020 23:07:34 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/vue%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>指令 Vue中的指令就是指 v- 开头，作用于HTML元素，为绑定的目标元素提供一些特性，因此我们可以将指令看做特殊的HTML特性
+表达式  {{ obj.a }} 表达式 {{ n + 1 }} 可以添加任何参数运算 {{ fn(n) }} 可以调用任何函数 当值为 undefined 或者 null 时，则不显示 也可以使用 &amp;lt;div v-text=&amp;quot;表达式&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; 的写法来展示  HTML 内容 v-html 可以使得表达式中的所含的标签生效
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div v-html=&amp;quot;x&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; new Vue({ el: &#39;#app&#39;, data:{ x:&amp;lt;strong&amp;gt;hi&amp;lt;/strong&amp;gt; } })  显示值为：hi
+输出{{ n }} 如果我们要输出{{ n }},直接写入模板的话，则会被模板编译为 n 的值,用v-pre可以不被模板进行编译
+&amp;lt;div v-pre&amp;gt;{{ n }}&amp;lt;/div&amp;gt; 显示值为：{{ n }}  绑定属性 使用 v-bind 来进行属性的绑定，v-bind 可以简写为 :</description>
+    </item>
+    
+    <item>
+      <title>Provide 和 Inject</title>
+      <link>https://lwbing.top/posts/provide-%E5%92%8C-inject/</link>
+      <pubDate>Sat, 01 Aug 2020 20:12:41 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/provide-%E5%92%8C-inject/</guid>
+      <description>Provide、Inject 提供和注入，这两个选项是一起用的，祖先组件可以使用Provide给子孙组件提供自身的属性和方法，不论子孙组件的层级有多深；子孙组件可以通过 Inject 获取到祖先组件的属性和方法
+GrandFather.vue
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;Father&amp;gt; &amp;lt;/Father&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Father from &amp;quot;./components/Father.vue&amp;quot; export default { provide:{ name:&amp;quot;爷爷&amp;quot; }, components:{Father} }; &amp;lt;/script&amp;gt;  Father.vue
+&amp;lt;template&amp;gt; &amp;lt;Child&amp;gt;&amp;lt;/Child&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;quot;../components/Child.vue&amp;quot; export default { components:{Child} }; &amp;lt;/script&amp;gt;  Child.vue
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt;{{name}}&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { inject:[&amp;quot;name&amp;quot;] }; &amp;lt;/script&amp;gt;  效果： 可以看出 Provide 是对象形式而 Inject 是字符串数组形式，作用是大范围的 data 和 methods 等共用</description>
+    </item>
+    
+    <item>
+      <title>mixins 和 extends 的使用</title>
+      <link>https://lwbing.top/posts/mixins%E5%92%8Cextends%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 28 Jul 2020 23:14:27 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/mixins%E5%92%8Cextends%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>mixins mixins 就是混入，用简单的话来说就是复制，作用是为了减少重复，并且一个混入对象可以包含任意组件选项。
+Mixin.js
+const Mixin = { methods:{ hello(){ console.log(&#39;hello&#39;) } }, created(){ this.hello() } } export default Mixin;  App.vue
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import myMixin from &amp;quot;./Mixin.js&amp;quot;; export default { mixins:[myMixin] }; &amp;lt;/script&amp;gt;  效果 ps：可以引用多个 mixins
+选项合并 当组件和混入对象含有同名选项时，这些选项将以恰当的方式进行“合并”，以组件数据优先
+Mixin.js
+const Mixin = { data(){ return{ x :5, y : 10 } } } export default Mixin;  App.vue
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import myMixin from &amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>Directive 指令</title>
+      <link>https://lwbing.top/posts/directive-%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Wed, 22 Jul 2020 21:05:41 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/directive-%E6%8C%87%E4%BB%A4/</guid>
+      <description>全局指令 使用 Vue.directive(&#39;x&#39;,directiveOptions) 可以生成一个全局的 v-x 指令，在任何组件都可以使用该指令 main.js
+Vue.directive(&#39;x&#39;,{ inserted(el){ el.addEventListener(&#39;click&#39;,()=&amp;gt;console.log(&#39;x&#39;)) } })  App.vue
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p v-x&amp;gt;打印&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt;  效果： 局部指令 使用 directives 可以生成一个局部的 v-y 指令，该指令只能在声明的组件中使用
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button v-y&amp;gt;打印&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { name: &amp;quot;App&amp;quot;, directives:{ &#39;y&#39;:{ inserted(el){ el.addEventListener(&#39;click&#39;,()=&amp;gt;console.log(&#39;y&#39;)) } } } }; &amp;lt;/script&amp;gt;  效果： Directive 指令中的钩子函数  bind: 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置 inserted: 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中) update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下) componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用 unbind：只调用一次，指令与元素解绑时调用。  钩子函数参数 指令钩子函数会被传入以下参数： * el：指令所绑定的元素，可以用来直接操作 DOM * binding：一个对象，包含以下 property： * name：指令名，不包括 v- 前缀 * value：指令的绑定值，例如：v-my-directive=&amp;quot;1 + 1&amp;quot; 中，绑定值为 2 * oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用 * expression：字符串形式的指令表达式。例如 v-my-directive=&amp;quot;1 + 1&amp;quot; 中，表达式为 &amp;quot;1 + 1&amp;quot; * arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 &amp;quot;foo&amp;quot; * modifiers：一个包含修饰符的对象。例如：v-my-directive.</description>
+    </item>
+    
+    <item>
+      <title>Vue template 三种写法</title>
+      <link>https://lwbing.top/posts/vue-template%E4%B8%89%E7%A7%8D%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 13 Jul 2020 22:42:39 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/vue-template%E4%B8%89%E7%A7%8D%E5%86%99%E6%B3%95/</guid>
+      <description>完整版  写在 HTML 里
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; new Vue({ el: &#39;#app&#39;, data:{n:0}, methods:{\ add(){ this.n+=1 } } }  写在选项里
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; new Vue({ template: ` &amp;lt;div&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;`, data:{n:0}, // data methods:{add(){ this.n += 1 }} }).$mount(&#39;#app&#39;)   PS:这种写法，div#app 会被替换
+非完整版 Demo.vue
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt; +1 &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data(){ return {n:0} }, // data 必须为函数 methods:{add(){ this.</description>
+    </item>
+    
+    <item>
+      <title>computed 与 watch 的区别</title>
+      <link>https://lwbing.top/posts/computed%E4%B8%8Ewatch%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 10 Jul 2020 21:35:19 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/computed%E4%B8%8Ewatch%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>计算属性 computed 被计算出来的属性，我们称之为计算属性，依赖于缓存，只有当缓存变化的时候，才会重新计算，详细来说就是，页面如果重新渲染，但是 data 中的数据的值没有发生改变，计算属性会立刻返回之前的计算结果，而不会再次执行函数
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button @click=&amp;quot;getNewDate&amp;quot;&amp;gt;newDate&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { computed:{ newDate(){ return new Date().getSeconds().toString() } }, methods: { getNewDate(){ console.log(this.newDate) } } }; &amp;lt;/script&amp;gt;  侦听属性 watch 当数据变化时，执行一个函数，我们称之为侦听属性，监听 props ，执行$emit和本组件的值时为异步操作。无缓存性，页面渲染时，值不变化也会执行函数。
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; {{n}} &amp;lt;hr /&amp;gt; &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;hr/&amp;gt; &amp;lt;button @click=&amp;quot;undo&amp;quot;&amp;gt;撤销&amp;lt;/button&amp;gt; &amp;lt;hr/&amp;gt; {{history}} &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data:{ n:0, history: [], inUndoMode:false }, methods:{ add(){ this.n+=1 }, undo(){ const last = this.</description>
+    </item>
+    
+    <item>
+      <title>Vue 的生命周期钩子</title>
+      <link>https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/</link>
+      <pubDate>Mon, 06 Jul 2020 21:14:38 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/</guid>
+      <description>先上个图
+什么是生命周期？生命周期就是一个对象的生老病死。 Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
+在Vue的生命周期中有四个关键的时间点，在这几个关键的时间点发生的事件我们称之为 生命周期钩子（生命周期事件或生命周期函数
+ 创建阶段的生命周期钩子
+ beforeCreate：实例刚刚在内存中被创建出来，此时 methods 和 data 还没有被初始化出来 created：实例已经在内存中创建OK，此时 data 和 methods 已经创建完成，还没有开始编译模板     编译阶段的生命周期钩子
+ beforeMount：此时模板已经在内存中编译完成，但是还没有挂载到页面中 mounted：此时内存中的模板已经真实的挂载到了页面指定的容器中，用户已经可以看到渲染好的页面    运行阶段的生命周期钩子
+ beforeUpdate：此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，界面还没有被重新渲染 updated：此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面被重新渲染！    销毁阶段的生命周期钩子
+ beforeDestroy：此时实例仍然完全可用 destroyed：此时实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。   App.vue
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;Box v-if=&amp;quot;flag === true&amp;quot; /&amp;gt; &amp;lt;button @click=&amp;quot;toggle&amp;quot;&amp;gt;toggle&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Box from &amp;quot;./Box.vue&amp;quot;; export default { data() { return { flag: true, }; }, components: { Box, }, methods: { toggle() { this.</description>
+    </item>
+    
+    <item>
+      <title>虚拟 DOM 和 DOM diff</title>
+      <link>https://lwbing.top/posts/%E8%99%9A%E6%8B%9F-dom-%E5%92%8C-dom-diff/</link>
+      <pubDate>Sun, 28 Jun 2020 20:24:22 +0800</pubDate>
+      
+      <guid>https://lwbing.top/posts/%E8%99%9A%E6%8B%9F-dom-%E5%92%8C-dom-diff/</guid>
+      <description>Web 界面是由DOM树(树的意思是数据结构)构建而成的，当其中一部分改变时，对应某个DOM节点发生了变化。DOM 元素是非常庞大的，一旦对 DOM 进行操作就可能会导致页面重绘或重排，这样将会对页面的性能造成影响，所以为了减少由于重绘或重排造成的性能影响问题，都要尽可能少的去操作DOM节点。
+## 虚拟 DOM
+一个能代表 DOM 树的对象，通常含有标签名、标签上的属性、事件监听和子元素以及其他属性
+### 优点 1. 减少 DOM 操作：虚拟 DOM 可以把多次操作合并为一次操作；通过DOM diff 可以把多余操作省掉
+ 跨平台：不仅可以变成DOM，还可以变成小程序、IOS应用、安卓应用  如何创建虚拟 DOM React createElement(&#39;div&#39;,{className:&#39;red&#39;,onClick:()=&amp;gt;{}},[ createElement(&#39;span&#39;,{},&#39;span1&#39;), createElement(&#39;span&#39;,{},&#39;span2&#39;), ] )  Vue h(&#39;div&#39;,{ class:&#39;red&#39;, on:{ click:()=&amp;gt;{} }, },[ h(&#39;span&#39;,{},&#39;span1&#39;), h(&#39;span&#39;,{},&#39;span2&#39;) ] )  通过 JSX 创建 (推荐) React &amp;lt;div className=&amp;quot;red&amp;quot; onClcik={fn}&amp;gt; &amp;lt;span&amp;gt;span1&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;span2&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  Vue &amp;lt;div className=&amp;quot;red&amp;quot;@clcik=&amp;quot;fn&amp;quot;&amp;gt; &amp;lt;span&amp;gt;span1&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;span2&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  DOM diff DOM diff 就是一个函数，我们称之为 patch ，他会对比渲染更新前和更新后的两个虚拟 DOM 对象的差异，形成一个差异补丁，并将其运用到真实的 DOM 上。</description>
     </item>
     
     <item>

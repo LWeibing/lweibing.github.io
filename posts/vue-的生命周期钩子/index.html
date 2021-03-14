@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vue 的生命周期钩子 | Clown博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Vue 的生命周期钩子" />
+<meta property="og:description" content="先上个图
+什么是生命周期？生命周期就是一个对象的生老病死。 Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
+在Vue的生命周期中有四个关键的时间点，在这几个关键的时间点发生的事件我们称之为 生命周期钩子（生命周期事件或生命周期函数
+ 创建阶段的生命周期钩子
+ beforeCreate：实例刚刚在内存中被创建出来，此时 methods 和 data 还没有被初始化出来 created：实例已经在内存中创建OK，此时 data 和 methods 已经创建完成，还没有开始编译模板     编译阶段的生命周期钩子
+ beforeMount：此时模板已经在内存中编译完成，但是还没有挂载到页面中 mounted：此时内存中的模板已经真实的挂载到了页面指定的容器中，用户已经可以看到渲染好的页面    运行阶段的生命周期钩子
+ beforeUpdate：此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，界面还没有被重新渲染 updated：此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面被重新渲染！    销毁阶段的生命周期钩子
+ beforeDestroy：此时实例仍然完全可用 destroyed：此时实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。   App.vue
+&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;Box v-if=&quot;flag === true&quot; /&gt; &lt;button @click=&quot;toggle&quot;&gt;toggle&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Box from &quot;./Box.vue&quot;; export default { data() { return { flag: true, }; }, components: { Box, }, methods: { toggle() { this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/" />
+<meta property="article:published_time" content="2020-07-06T21:14:38+08:00" />
+<meta property="article:modified_time" content="2020-07-06T21:14:38+08:00" />
+<meta itemprop="name" content="Vue 的生命周期钩子">
+<meta itemprop="description" content="先上个图
+什么是生命周期？生命周期就是一个对象的生老病死。 Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
+在Vue的生命周期中有四个关键的时间点，在这几个关键的时间点发生的事件我们称之为 生命周期钩子（生命周期事件或生命周期函数
+ 创建阶段的生命周期钩子
+ beforeCreate：实例刚刚在内存中被创建出来，此时 methods 和 data 还没有被初始化出来 created：实例已经在内存中创建OK，此时 data 和 methods 已经创建完成，还没有开始编译模板     编译阶段的生命周期钩子
+ beforeMount：此时模板已经在内存中编译完成，但是还没有挂载到页面中 mounted：此时内存中的模板已经真实的挂载到了页面指定的容器中，用户已经可以看到渲染好的页面    运行阶段的生命周期钩子
+ beforeUpdate：此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，界面还没有被重新渲染 updated：此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面被重新渲染！    销毁阶段的生命周期钩子
+ beforeDestroy：此时实例仍然完全可用 destroyed：此时实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。   App.vue
+&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;Box v-if=&quot;flag === true&quot; /&gt; &lt;button @click=&quot;toggle&quot;&gt;toggle&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Box from &quot;./Box.vue&quot;; export default { data() { return { flag: true, }; }, components: { Box, }, methods: { toggle() { this.">
+
+
+<meta itemprop="datePublished" content="2020-07-06T21:14:38&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-06T21:14:38&#43;08:00" />
+<meta itemprop="wordCount" content="106">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue 的生命周期钩子"/>
+<meta name="twitter:description" content="先上个图
+什么是生命周期？生命周期就是一个对象的生老病死。 Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。
+在Vue的生命周期中有四个关键的时间点，在这几个关键的时间点发生的事件我们称之为 生命周期钩子（生命周期事件或生命周期函数
+ 创建阶段的生命周期钩子
+ beforeCreate：实例刚刚在内存中被创建出来，此时 methods 和 data 还没有被初始化出来 created：实例已经在内存中创建OK，此时 data 和 methods 已经创建完成，还没有开始编译模板     编译阶段的生命周期钩子
+ beforeMount：此时模板已经在内存中编译完成，但是还没有挂载到页面中 mounted：此时内存中的模板已经真实的挂载到了页面指定的容器中，用户已经可以看到渲染好的页面    运行阶段的生命周期钩子
+ beforeUpdate：此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，界面还没有被重新渲染 updated：此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面被重新渲染！    销毁阶段的生命周期钩子
+ beforeDestroy：此时实例仍然完全可用 destroyed：此时实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。   App.vue
+&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;Box v-if=&quot;flag === true&quot; /&gt; &lt;button @click=&quot;toggle&quot;&gt;toggle&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Box from &quot;./Box.vue&quot;; export default { data() { return { flag: true, }; }, components: { Box, }, methods: { toggle() { this."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+<header>
+  <div class="bg-black">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lwbing.top/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Clown博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+  </div>
+</header>
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/&amp;text=Vue%20%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f%e9%92%a9%e5%ad%90" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://lwbing.top/posts/vue-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/&amp;title=Vue%20%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f%e9%92%a9%e5%ad%90" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">Vue 的生命周期钩子</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-06T21:14:38&#43;08:00">July 6, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>先上个图</p>
+
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/19f4974fa807406f9888ee2f41321dcf~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p>
+
+<p>什么是生命周期？生命周期就是一个对象的生老病死。
+Vue也有自己的生命周期，从Vue实例的创建、初始化、更新、销毁，在这个过程中间总是伴随着各种各样的事情，这些事情我们我们统称为生命周期。</p>
+
+<p>在Vue的生命周期中有四个关键的时间点，在这几个关键的时间点发生的事件我们称之为 <strong>生命周期钩子（生命周期事件或生命周期函数</strong></p>
+
+<ul>
+<li><p>创建阶段的生命周期钩子</p>
+
+<ul>
+<li><code>beforeCreate</code>：实例刚刚在内存中被创建出来，此时 <code>methods</code> 和 <code>data</code> 还没有被初始化出来</li>
+<li><code>created</code>：实例已经在内存中创建OK，此时 <code>data</code> 和 <code>methods</code> 已经创建完成，还没有开始编译模板
+<br /></li>
+</ul></li>
+</ul>
+
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/90d468575a4b49778d93ad44241ec5ea~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p>
+
+<ul>
+<li><p>编译阶段的生命周期钩子</p>
+
+<ul>
+<li><code>beforeMount</code>：此时模板已经在内存中编译完成，但是还没有挂载到页面中</li>
+<li><code>mounted</code>：此时内存中的模板已经真实的挂载到了页面指定的容器中，用户已经可以看到渲染好的页面
+<br /></li>
+</ul>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f855d3c44bd7467d989b4392b00402ef~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p></li>
+
+<li><p>运行阶段的生命周期钩子</p>
+
+<ul>
+<li><code>beforeUpdate</code>：此时 <code>data</code> 中的状态值是最新的，但是界面上显示的 数据还是旧的，界面还没有被重新渲染</li>
+<li><code>updated</code>：此时 <code>data</code> 中的状态值 和 界面上显示的数据，都已经完成了更新，界面被重新渲染！
+<br /></li>
+</ul>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28d17605263d42058acf6b5940108a1e~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p></li>
+
+<li><p>销毁阶段的生命周期钩子</p>
+
+<ul>
+<li><code>beforeDestroy</code>：此时实例仍然完全可用</li>
+<li><code>destroyed</code>：此时实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
+</ul></li>
+</ul>
+
+<p>App.vue</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;Box v-if=&quot;flag === true&quot; /&gt;
+    &lt;button @click=&quot;toggle&quot;&gt;toggle&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Box from &quot;./Box.vue&quot;;
+export default {
+  data() {
+    return {
+      flag: true,
+    };
+  },
+  components: {
+    Box,
+  },
+  methods: {
+    toggle() {
+      this.flag = !this.flag;
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+
+<p>Box.vue</p>
+
+<pre><code>&lt;template&gt;
+&lt;div id=&quot;text&quot;&gt;{{n}}&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            n: 0,
+        };
+    },
+    beforeDestroy() {
+        console.log(&quot;beforeDestroy&quot;);
+        console.log(this.n);
+    },
+    destroyed() {
+        console.log(&quot;destroyed&quot;);
+        console.log(this.n);
+    },
+};
+&lt;/script&gt;
+</code></pre>
+
+<p>效果如下：</p>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32d6fc25bfed44548d2e02b3359f6960~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lwbing.top/" >
+    &copy;  Clown博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
